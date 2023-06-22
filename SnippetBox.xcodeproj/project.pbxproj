@@ -16,6 +16,23 @@
 		17E8088E2A42DE2E00E5CC1B /* SnippetBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E8088D2A42DE2E00E5CC1B /* SnippetBoxTests.swift */; };
 		17E808982A42DE2E00E5CC1B /* SnippetBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808972A42DE2E00E5CC1B /* SnippetBoxUITests.swift */; };
 		17E8089A2A42DE2E00E5CC1B /* SnippetBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808992A42DE2E00E5CC1B /* SnippetBoxUITestsLaunchTests.swift */; };
+		17E808A82A42E0DB00E5CC1B /* Snippet+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808A72A42E0DB00E5CC1B /* Snippet+helper.swift */; };
+		17E808AA2A42E0E400E5CC1B /* Folder+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808A92A42E0E400E5CC1B /* Folder+helper.swift */; };
+		17E808AC2A42E0F000E5CC1B /* Tag+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808AB2A42E0F000E5CC1B /* Tag+helper.swift */; };
+		17E808AF2A42E3A200E5CC1B /* NSPredicate+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808AE2A42E3A200E5CC1B /* NSPredicate+Helper.swift */; };
+		17E808B12A42E3FC00E5CC1B /* FolderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808B02A42E3FC00E5CC1B /* FolderListView.swift */; };
+		17E808B32A42E40D00E5CC1B /* SnippetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808B22A42E40D00E5CC1B /* SnippetListView.swift */; };
+		17E808B52A42E41600E5CC1B /* SnippetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808B42A42E41600E5CC1B /* SnippetDetailView.swift */; };
+		17E808B72A42E49C00E5CC1B /* Color+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808B62A42E49C00E5CC1B /* Color+Helper.swift */; };
+		17E808BA2A43075900E5CC1B /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 17E808B92A43075900E5CC1B /* CodeEditor */; };
+		17E808BD2A430B9100E5CC1B /* macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808BC2A430B9100E5CC1B /* macOS.swift */; platformFilters = (macos, ); };
+		17E808BF2A430BBD00E5CC1B /* SnippetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808BE2A430BBD00E5CC1B /* SnippetImageView.swift */; };
+		17E808C12A430C7200E5CC1B /* ImageSelectorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808C02A430C7200E5CC1B /* ImageSelectorButton.swift */; };
+		17E808C32A430F7900E5CC1B /* FavoriteToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808C22A430F7900E5CC1B /* FavoriteToggleStyle.swift */; };
+		17E808C52A4317EC00E5CC1B /* AddTagToSnippetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808C42A4317EC00E5CC1B /* AddTagToSnippetsView.swift */; };
+		17E808C72A4318B100E5CC1B /* NewTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808C62A4318B100E5CC1B /* NewTagView.swift */; };
+		17E808C92A431EE700E5CC1B /* FolderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808C82A431EE700E5CC1B /* FolderRow.swift */; };
+		17E808CB2A43221400E5CC1B /* iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808CA2A43221400E5CC1B /* iOS.swift */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +66,22 @@
 		17E808932A42DE2E00E5CC1B /* SnippetBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E808972A42DE2E00E5CC1B /* SnippetBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetBoxUITests.swift; sourceTree = "<group>"; };
 		17E808992A42DE2E00E5CC1B /* SnippetBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		17E808A72A42E0DB00E5CC1B /* Snippet+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snippet+helper.swift"; sourceTree = "<group>"; };
+		17E808A92A42E0E400E5CC1B /* Folder+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Folder+helper.swift"; sourceTree = "<group>"; };
+		17E808AB2A42E0F000E5CC1B /* Tag+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+helper.swift"; sourceTree = "<group>"; };
+		17E808AE2A42E3A200E5CC1B /* NSPredicate+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Helper.swift"; sourceTree = "<group>"; };
+		17E808B02A42E3FC00E5CC1B /* FolderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListView.swift; sourceTree = "<group>"; };
+		17E808B22A42E40D00E5CC1B /* SnippetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetListView.swift; sourceTree = "<group>"; };
+		17E808B42A42E41600E5CC1B /* SnippetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetDetailView.swift; sourceTree = "<group>"; };
+		17E808B62A42E49C00E5CC1B /* Color+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Helper.swift"; sourceTree = "<group>"; };
+		17E808BC2A430B9100E5CC1B /* macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = macOS.swift; sourceTree = "<group>"; };
+		17E808BE2A430BBD00E5CC1B /* SnippetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetImageView.swift; sourceTree = "<group>"; };
+		17E808C02A430C7200E5CC1B /* ImageSelectorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorButton.swift; sourceTree = "<group>"; };
+		17E808C22A430F7900E5CC1B /* FavoriteToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteToggleStyle.swift; sourceTree = "<group>"; };
+		17E808C42A4317EC00E5CC1B /* AddTagToSnippetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagToSnippetsView.swift; sourceTree = "<group>"; };
+		17E808C62A4318B100E5CC1B /* NewTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTagView.swift; sourceTree = "<group>"; };
+		17E808C82A431EE700E5CC1B /* FolderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderRow.swift; sourceTree = "<group>"; };
+		17E808CA2A43221400E5CC1B /* iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E808BA2A43075900E5CC1B /* CodeEditor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,11 +134,21 @@
 			isa = PBXGroup;
 			children = (
 				17E808762A42DE2D00E5CC1B /* SnippetBoxApp.swift */,
-				17E808782A42DE2D00E5CC1B /* Persistence.swift */,
 				17E8087D2A42DE2D00E5CC1B /* ContentView.swift */,
+				17E808B02A42E3FC00E5CC1B /* FolderListView.swift */,
+				17E808C82A431EE700E5CC1B /* FolderRow.swift */,
+				17E808B22A42E40D00E5CC1B /* SnippetListView.swift */,
+				17E808B42A42E41600E5CC1B /* SnippetDetailView.swift */,
+				17E808BE2A430BBD00E5CC1B /* SnippetImageView.swift */,
+				17E808C02A430C7200E5CC1B /* ImageSelectorButton.swift */,
+				17E808C22A430F7900E5CC1B /* FavoriteToggleStyle.swift */,
+				17E808C42A4317EC00E5CC1B /* AddTagToSnippetsView.swift */,
+				17E808C62A4318B100E5CC1B /* NewTagView.swift */,
+				17E808BB2A430B7800E5CC1B /* helper */,
+				17E808AD2A42E31A00E5CC1B /* core data */,
+				17E8087A2A42DE2D00E5CC1B /* SnippetBox.xcdatamodeld */,
 				17E8087F2A42DE2E00E5CC1B /* Assets.xcassets */,
 				17E808812A42DE2E00E5CC1B /* SnippetBox.entitlements */,
-				17E8087A2A42DE2D00E5CC1B /* SnippetBox.xcdatamodeld */,
 				17E808822A42DE2E00E5CC1B /* Preview Content */,
 			);
 			path = SnippetBox;
@@ -135,6 +179,36 @@
 			path = SnippetBoxUITests;
 			sourceTree = "<group>";
 		};
+		17E808A62A42E0CE00E5CC1B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				17E808A72A42E0DB00E5CC1B /* Snippet+helper.swift */,
+				17E808A92A42E0E400E5CC1B /* Folder+helper.swift */,
+				17E808AB2A42E0F000E5CC1B /* Tag+helper.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		17E808AD2A42E31A00E5CC1B /* core data */ = {
+			isa = PBXGroup;
+			children = (
+				17E808782A42DE2D00E5CC1B /* Persistence.swift */,
+				17E808AE2A42E3A200E5CC1B /* NSPredicate+Helper.swift */,
+				17E808B62A42E49C00E5CC1B /* Color+Helper.swift */,
+				17E808A62A42E0CE00E5CC1B /* model */,
+			);
+			path = "core data";
+			sourceTree = "<group>";
+		};
+		17E808BB2A430B7800E5CC1B /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				17E808BC2A430B9100E5CC1B /* macOS.swift */,
+				17E808CA2A43221400E5CC1B /* iOS.swift */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,6 +225,9 @@
 			dependencies = (
 			);
 			name = SnippetBox;
+			packageProductDependencies = (
+				17E808B92A43075900E5CC1B /* CodeEditor */,
+			);
 			productName = SnippetBox;
 			productReference = 17E808732A42DE2D00E5CC1B /* SnippetBox.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +300,9 @@
 				Base,
 			);
 			mainGroup = 17E8086A2A42DE2D00E5CC1B;
+			packageReferences = (
+				17E808B82A43075900E5CC1B /* XCRemoteSwiftPackageReference "CodeEditor" */,
+			);
 			productRefGroup = 17E808742A42DE2D00E5CC1B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,10 +345,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E808C72A4318B100E5CC1B /* NewTagView.swift in Sources */,
+				17E808AF2A42E3A200E5CC1B /* NSPredicate+Helper.swift in Sources */,
 				17E8087C2A42DE2D00E5CC1B /* SnippetBox.xcdatamodeld in Sources */,
+				17E808BF2A430BBD00E5CC1B /* SnippetImageView.swift in Sources */,
+				17E808C52A4317EC00E5CC1B /* AddTagToSnippetsView.swift in Sources */,
+				17E808B32A42E40D00E5CC1B /* SnippetListView.swift in Sources */,
+				17E808C92A431EE700E5CC1B /* FolderRow.swift in Sources */,
+				17E808AA2A42E0E400E5CC1B /* Folder+helper.swift in Sources */,
+				17E808BD2A430B9100E5CC1B /* macOS.swift in Sources */,
+				17E808B12A42E3FC00E5CC1B /* FolderListView.swift in Sources */,
+				17E808C32A430F7900E5CC1B /* FavoriteToggleStyle.swift in Sources */,
+				17E808CB2A43221400E5CC1B /* iOS.swift in Sources */,
 				17E808772A42DE2D00E5CC1B /* SnippetBoxApp.swift in Sources */,
+				17E808A82A42E0DB00E5CC1B /* Snippet+helper.swift in Sources */,
 				17E8087E2A42DE2D00E5CC1B /* ContentView.swift in Sources */,
+				17E808B52A42E41600E5CC1B /* SnippetDetailView.swift in Sources */,
+				17E808AC2A42E0F000E5CC1B /* Tag+helper.swift in Sources */,
 				17E808792A42DE2D00E5CC1B /* Persistence.swift in Sources */,
+				17E808C12A430C7200E5CC1B /* ImageSelectorButton.swift in Sources */,
+				17E808B72A42E49C00E5CC1B /* Color+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +716,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17E808B82A43075900E5CC1B /* XCRemoteSwiftPackageReference "CodeEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZeeZide/CodeEditor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17E808B92A43075900E5CC1B /* CodeEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17E808B82A43075900E5CC1B /* XCRemoteSwiftPackageReference "CodeEditor" */;
+			productName = CodeEditor;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		17E8087A2A42DE2D00E5CC1B /* SnippetBox.xcdatamodeld */ = {
