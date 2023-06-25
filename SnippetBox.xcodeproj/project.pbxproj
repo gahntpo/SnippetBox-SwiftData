@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		177464DB2A482BC0008702DC /* FolderEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177464DA2A482BC0008702DC /* FolderEditorView.swift */; };
 		17808C1F2A45879600B33D30 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17808C1E2A45879600B33D30 /* Folder.swift */; };
 		1782D6392A4573FD008B99A2 /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782D6362A4573FD008B99A2 /* Snippet.swift */; };
 		1782D63A2A4573FD008B99A2 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782D6372A4573FD008B99A2 /* Tag.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		177464DA2A482BC0008702DC /* FolderEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditorView.swift; sourceTree = "<group>"; };
 		17808C1E2A45879600B33D30 /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		1782D6362A4573FD008B99A2 /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
 		1782D6372A4573FD008B99A2 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -106,6 +108,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		177464D32A482B0A008702DC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				17E8087D2A42DE2D00E5CC1B /* ContentView.swift */,
+				177464D52A482B20008702DC /* folder list view */,
+				177464D62A482B31008702DC /* snippet list view */,
+				177464D42A482B15008702DC /* snippet detail */,
+				177464D72A482B56008702DC /* tag */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		177464D42A482B15008702DC /* snippet detail */ = {
+			isa = PBXGroup;
+			children = (
+				17E808B42A42E41600E5CC1B /* SnippetDetailView.swift */,
+				17E808BE2A430BBD00E5CC1B /* SnippetImageView.swift */,
+				17E808C02A430C7200E5CC1B /* ImageSelectorButton.swift */,
+			);
+			path = "snippet detail";
+			sourceTree = "<group>";
+		};
+		177464D52A482B20008702DC /* folder list view */ = {
+			isa = PBXGroup;
+			children = (
+				17E808B02A42E3FC00E5CC1B /* FolderListView.swift */,
+				177464DA2A482BC0008702DC /* FolderEditorView.swift */,
+				17E808C82A431EE700E5CC1B /* FolderRow.swift */,
+			);
+			path = "folder list view";
+			sourceTree = "<group>";
+		};
+		177464D62A482B31008702DC /* snippet list view */ = {
+			isa = PBXGroup;
+			children = (
+				17E808B22A42E40D00E5CC1B /* SnippetListView.swift */,
+			);
+			path = "snippet list view";
+			sourceTree = "<group>";
+		};
+		177464D72A482B56008702DC /* tag */ = {
+			isa = PBXGroup;
+			children = (
+				17E808C42A4317EC00E5CC1B /* AddTagToSnippetsView.swift */,
+				17E61E9F2A4710AE008F29BD /* TagListView.swift */,
+				17E808C62A4318B100E5CC1B /* NewTagView.swift */,
+			);
+			path = tag;
+			sourceTree = "<group>";
+		};
+		177464D82A482B6A008702DC /* cross platform */ = {
+			isa = PBXGroup;
+			children = (
+				17E808BC2A430B9100E5CC1B /* macOS.swift */,
+				17E808CA2A43221400E5CC1B /* iOS.swift */,
+			);
+			path = "cross platform";
+			sourceTree = "<group>";
+		};
+		177464D92A482B75008702DC /* style guide */ = {
+			isa = PBXGroup;
+			children = (
+				17E808C22A430F7900E5CC1B /* FavoriteToggleStyle.swift */,
+			);
+			path = "style guide";
+			sourceTree = "<group>";
+		};
 		17E8086A2A42DE2D00E5CC1B = {
 			isa = PBXGroup;
 			children = (
@@ -130,17 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				17E808762A42DE2D00E5CC1B /* SnippetBoxApp.swift */,
-				17E8087D2A42DE2D00E5CC1B /* ContentView.swift */,
-				17E808B02A42E3FC00E5CC1B /* FolderListView.swift */,
-				17E808C82A431EE700E5CC1B /* FolderRow.swift */,
-				17E808B22A42E40D00E5CC1B /* SnippetListView.swift */,
-				17E808B42A42E41600E5CC1B /* SnippetDetailView.swift */,
-				17E808BE2A430BBD00E5CC1B /* SnippetImageView.swift */,
-				17E808C02A430C7200E5CC1B /* ImageSelectorButton.swift */,
-				17E808C22A430F7900E5CC1B /* FavoriteToggleStyle.swift */,
-				17E808C42A4317EC00E5CC1B /* AddTagToSnippetsView.swift */,
-				17E61E9F2A4710AE008F29BD /* TagListView.swift */,
-				17E808C62A4318B100E5CC1B /* NewTagView.swift */,
+				177464D32A482B0A008702DC /* view */,
 				17E808BB2A430B7800E5CC1B /* helper */,
 				17E808AD2A42E31A00E5CC1B /* swift data */,
 				17E8087F2A42DE2E00E5CC1B /* Assets.xcassets */,
@@ -175,21 +234,13 @@
 			path = SnippetBoxUITests;
 			sourceTree = "<group>";
 		};
-		17E808A62A42E0CE00E5CC1B /* model */ = {
+		17E808AD2A42E31A00E5CC1B /* swift data */ = {
 			isa = PBXGroup;
 			children = (
 				1782D6362A4573FD008B99A2 /* Snippet.swift */,
 				1782D6372A4573FD008B99A2 /* Tag.swift */,
 				17808C1E2A45879600B33D30 /* Folder.swift */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		17E808AD2A42E31A00E5CC1B /* swift data */ = {
-			isa = PBXGroup;
-			children = (
 				17E808B62A42E49C00E5CC1B /* Color+Helper.swift */,
-				17E808A62A42E0CE00E5CC1B /* model */,
 			);
 			path = "swift data";
 			sourceTree = "<group>";
@@ -197,8 +248,8 @@
 		17E808BB2A430B7800E5CC1B /* helper */ = {
 			isa = PBXGroup;
 			children = (
-				17E808BC2A430B9100E5CC1B /* macOS.swift */,
-				17E808CA2A43221400E5CC1B /* iOS.swift */,
+				177464D92A482B75008702DC /* style guide */,
+				177464D82A482B6A008702DC /* cross platform */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -355,6 +406,7 @@
 				17808C1F2A45879600B33D30 /* Folder.swift in Sources */,
 				17E8087E2A42DE2D00E5CC1B /* ContentView.swift in Sources */,
 				17E808B52A42E41600E5CC1B /* SnippetDetailView.swift in Sources */,
+				177464DB2A482BC0008702DC /* FolderEditorView.swift in Sources */,
 				17E808C12A430C7200E5CC1B /* ImageSelectorButton.swift in Sources */,
 				17E808B72A42E49C00E5CC1B /* Color+Helper.swift in Sources */,
 			);

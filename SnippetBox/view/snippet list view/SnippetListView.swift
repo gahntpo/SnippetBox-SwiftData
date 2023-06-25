@@ -55,6 +55,7 @@ struct SnippetListView: View {
                 }
             }
         }
+        .navigationTitle(folder.name)
     }
     
     private func addItem() {

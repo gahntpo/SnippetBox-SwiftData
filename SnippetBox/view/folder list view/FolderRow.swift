@@ -35,7 +35,21 @@ struct FolderRow: View {
             Text("\(folder.snippets.count)")
                 .foregroundColor(.secondary)
         }
-        
+        .swipeActions {
+            
+            Button(role: .destructive) {
+                Folder.delete(folder)
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
+            
+            Button(action: {
+                startRenameAction()
+            }, label: {
+                Label("Rename", systemImage: "pencil")
+            })
+            
+        }
         .contextMenu {
             
             Button("Rename") {
@@ -45,6 +59,9 @@ struct FolderRow: View {
                 Folder.delete(folder)
             }
         }
+        .sheet(isPresented: $showRenameEditor, content: {
+            FolderEditorView(folder: folder)
+        })
 
     }
     
