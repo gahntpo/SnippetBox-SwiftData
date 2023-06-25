@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FolderListView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.modelContext) private var context
 
-    @FetchRequest(fetchRequest: Folder.fetch(.all))
-    private var folders: FetchedResults<Folder>
+    @Query(sort: \.creationDate, order: .forward)
+    var folders: [Folder]
 
     @Binding var selectedFolder: Folder?
     
@@ -44,17 +45,17 @@ struct FolderListView: View {
     
     private func addItem() {
         withAnimation {
-            let folder = Folder(name: "new folder", context: viewContext)
+            let folder = Folder(name: "new folder")
+            context.insert(object: folder)
             selectedFolder = folder
-            PersistenceController.shared.save()
         }
     }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { folders[$0] }.forEach(viewContext.delete)
+            
+            offsets.map { folders[$0] }.forEach { context.delete($0) }
 
-            PersistenceController.shared.save()
         }
     }
 }
@@ -62,5 +63,6 @@ struct FolderListView: View {
 struct FolderListView_Previews: PreviewProvider {
     static var previews: some View {
         FolderListView(selectedFolder: .constant(nil))
+            .modelContainer(for: Snippet.self)
     }
 }

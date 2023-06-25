@@ -6,16 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SnippetListView: View {
     
     let folder: Folder
-    @FetchRequest(fetchRequest: Snippet.fetch(.none)) private var snippets: FetchedResults<Snippet>
+    
+    @Query(sort: \.creationDate, order: .forward)
+    var snippets: [Snippet]
+    
     @Binding var selectedSnippet: Snippet?
     
     init(for folder: Folder, selectedSnippet: Binding<Snippet?>) {
-        let request = Snippet.fetchSnippets(for: folder)
-        self._snippets = FetchRequest(fetchRequest: request)
+      
+      //  self._snippets = Query(filter: #Predicate { $0.folder == folder })
+
         
         self.folder = folder
         self._selectedSnippet = selectedSnippet
@@ -23,7 +28,8 @@ struct SnippetListView: View {
     
     var body: some View {
         List(selection: $selectedSnippet) {
-            ForEach(snippets) { snippet in
+            ForEach(folder.snippets) { snippet in
+           // ForEach(snippets) { snippet in
                 VStack(alignment: .leading) {
                     HStack {
                         Text(snippet.title)
@@ -53,21 +59,19 @@ struct SnippetListView: View {
     
     private func addItem() {
         withAnimation {
-            if let context = folder.managedObjectContext {
-                let snippet = Snippet(title: "new snippet", context: context)
+            if let context = folder.context {
+                let snippet = Snippet(title: "new snippet")
                 snippet.folder = folder
                 selectedSnippet = snippet
             }
 
-            PersistenceController.shared.save()
         }
     }
 }
 
 struct SnippetListView_Previews: PreviewProvider {
     static var previews: some View {
-        let context = PersistenceController.preview.container.viewContext
-        let folder = Folder.exampleWithSnippets(context: context)
-        return SnippetListView(for: folder, selectedSnippet: .constant(nil))
+        return SnippetListView(for: Folder.exampleWithSnippets(),
+                               selectedSnippet: .constant(nil))
     }
 }

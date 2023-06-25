@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FolderRow: View {
-    @ObservedObject var folder: Folder
+    var folder: Folder
     let selectedFolder: Folder?
     
     @FocusState private var textFieldIsSelected: Bool
@@ -59,6 +59,6 @@ struct FolderRow: View {
 
 struct FolderRow_Previews: PreviewProvider {
     static var previews: some View {
-        FolderRow(folder: Folder.exampleWithSnippets(context: PersistenceController.preview.container.viewContext), selectedFolder: nil)
+        FolderRow(folder: Folder.exampleWithSnippets(), selectedFolder: nil)
     }
 }

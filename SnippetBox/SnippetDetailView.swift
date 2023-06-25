@@ -10,8 +10,12 @@ import CodeEditor
 
 struct SnippetDetailView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
-    @ObservedObject var snippet: Snippet
+    init(snippet: Binding<Snippet?>) {
+        self._snippet = Binding.constant(snippet.wrappedValue ?? Snippet())
+    }
+    
+    @Environment(\.modelContext) private var context
+    @Binding var snippet: Snippet
     
     @State private var isNotesAreaShown: Bool = false
     @State private var isTagEditorShown = false
@@ -62,7 +66,7 @@ struct SnippetDetailView: View {
             HStack {
                 Text("Your Tags:")
                     .underline()
-                ForEach(snippet.tags.sorted()) { tag in
+                ForEach(snippet.tags) { tag in
                     HStack {
                         Image(systemName: "tag.fill")
                             .foregroundColor(tag.color)
@@ -116,7 +120,7 @@ struct SnippetDetailView: View {
                 .popover(isPresented: $isTagEditorShown) {
                     AddTagToSnippetsView(snippet: snippet)
                     
-                         .environment(\.managedObjectContext, viewContext)
+                         //.environment(\.managedObjectContext, viewContext)
                 }
                 
                 Button(role: .destructive) {
@@ -131,12 +135,13 @@ struct SnippetDetailView: View {
     }
 }
 
+/*
 struct SnippetDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-
-        SnippetDetailView(snippet: Snippet.example(context: PersistenceController.preview.container.viewContext))
-            
+            SnippetDetailView(snippet: .constant(Snippet.example()))
         }
+        .modelContainer(for: Snippet.self)
     }
 }
+*/

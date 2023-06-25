@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
     
@@ -15,10 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationSplitView {
-           
-                FolderListView(selectedFolder: $selectedFolder)
-            
-           
+            FolderListView(selectedFolder: $selectedFolder)
         } content: {
             if let folder = selectedFolder {
                 SnippetListView(for: folder, selectedSnippet: $selectedSnippet)
@@ -28,7 +24,7 @@ struct ContentView: View {
                 
         } detail: {
             if let snippet = selectedSnippet {
-                SnippetDetailView(snippet: snippet)
+                SnippetDetailView(snippet: $selectedSnippet)
             } else {
                 Text("Placeholder")
             }
@@ -36,15 +32,9 @@ struct ContentView: View {
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
+            .modelContainer(for: Snippet.self)
     }
 }

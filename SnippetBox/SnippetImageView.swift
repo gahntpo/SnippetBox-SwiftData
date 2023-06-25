@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SnippetImageView: View {
-    @ObservedObject var snippet: Snippet
+    var snippet: Snippet
     
     @State private var image: UIImage? = nil
     
@@ -35,6 +35,6 @@ struct SnippetImageView: View {
 
 struct SnippetImageView_Previews: PreviewProvider {
     static var previews: some View {
-        SnippetImageView(snippet: Snippet.example(context: PersistenceController.preview.container.viewContext))
+        SnippetImageView(snippet: Snippet.example())
     }
 }

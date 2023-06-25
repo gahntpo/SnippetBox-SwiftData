@@ -10,8 +10,9 @@ import PhotosUI
 
 struct ImageSelectorButton: View {
     
-    @Environment(\.managedObjectContext) var context
-    @ObservedObject var snippet: Snippet
+    
+    @Environment(\.modelContext) private var context
+    var snippet: Snippet
     @State private var selectedItem: PhotosPickerItem? = nil
     
     var body: some View {
@@ -44,6 +45,6 @@ struct ImageSelectorButton: View {
 
 struct ImageSelectorButton_Previews: PreviewProvider {
     static var previews: some View {
-        ImageSelectorButton(snippet: Snippet.example(context: PersistenceController.preview.container.viewContext))
+        ImageSelectorButton(snippet: Snippet.example())
     }
 }

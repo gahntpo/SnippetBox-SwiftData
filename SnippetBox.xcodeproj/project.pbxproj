@@ -7,19 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17808C1F2A45879600B33D30 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17808C1E2A45879600B33D30 /* Folder.swift */; };
+		1782D6392A4573FD008B99A2 /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782D6362A4573FD008B99A2 /* Snippet.swift */; };
+		1782D63A2A4573FD008B99A2 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782D6372A4573FD008B99A2 /* Tag.swift */; };
+		17E61EA02A4710AE008F29BD /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E61E9F2A4710AE008F29BD /* TagListView.swift */; };
 		17E808772A42DE2D00E5CC1B /* SnippetBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808762A42DE2D00E5CC1B /* SnippetBoxApp.swift */; };
-		17E808792A42DE2D00E5CC1B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808782A42DE2D00E5CC1B /* Persistence.swift */; };
-		17E8087C2A42DE2D00E5CC1B /* SnippetBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17E8087A2A42DE2D00E5CC1B /* SnippetBox.xcdatamodeld */; };
 		17E8087E2A42DE2D00E5CC1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E8087D2A42DE2D00E5CC1B /* ContentView.swift */; };
 		17E808802A42DE2E00E5CC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E8087F2A42DE2E00E5CC1B /* Assets.xcassets */; };
 		17E808842A42DE2E00E5CC1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E808832A42DE2E00E5CC1B /* Preview Assets.xcassets */; };
 		17E8088E2A42DE2E00E5CC1B /* SnippetBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E8088D2A42DE2E00E5CC1B /* SnippetBoxTests.swift */; };
 		17E808982A42DE2E00E5CC1B /* SnippetBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808972A42DE2E00E5CC1B /* SnippetBoxUITests.swift */; };
 		17E8089A2A42DE2E00E5CC1B /* SnippetBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808992A42DE2E00E5CC1B /* SnippetBoxUITestsLaunchTests.swift */; };
-		17E808A82A42E0DB00E5CC1B /* Snippet+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808A72A42E0DB00E5CC1B /* Snippet+helper.swift */; };
-		17E808AA2A42E0E400E5CC1B /* Folder+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808A92A42E0E400E5CC1B /* Folder+helper.swift */; };
-		17E808AC2A42E0F000E5CC1B /* Tag+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808AB2A42E0F000E5CC1B /* Tag+helper.swift */; };
-		17E808AF2A42E3A200E5CC1B /* NSPredicate+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808AE2A42E3A200E5CC1B /* NSPredicate+Helper.swift */; };
 		17E808B12A42E3FC00E5CC1B /* FolderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808B02A42E3FC00E5CC1B /* FolderListView.swift */; };
 		17E808B32A42E40D00E5CC1B /* SnippetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808B22A42E40D00E5CC1B /* SnippetListView.swift */; };
 		17E808B52A42E41600E5CC1B /* SnippetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808B42A42E41600E5CC1B /* SnippetDetailView.swift */; };
@@ -53,10 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17808C1E2A45879600B33D30 /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		1782D6362A4573FD008B99A2 /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
+		1782D6372A4573FD008B99A2 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		17E61E9F2A4710AE008F29BD /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		17E808732A42DE2D00E5CC1B /* SnippetBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E808762A42DE2D00E5CC1B /* SnippetBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetBoxApp.swift; sourceTree = "<group>"; };
-		17E808782A42DE2D00E5CC1B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		17E8087B2A42DE2D00E5CC1B /* SnippetBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnippetBox.xcdatamodel; sourceTree = "<group>"; };
 		17E8087D2A42DE2D00E5CC1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		17E8087F2A42DE2E00E5CC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17E808812A42DE2E00E5CC1B /* SnippetBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnippetBox.entitlements; sourceTree = "<group>"; };
@@ -66,10 +66,6 @@
 		17E808932A42DE2E00E5CC1B /* SnippetBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E808972A42DE2E00E5CC1B /* SnippetBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetBoxUITests.swift; sourceTree = "<group>"; };
 		17E808992A42DE2E00E5CC1B /* SnippetBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		17E808A72A42E0DB00E5CC1B /* Snippet+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snippet+helper.swift"; sourceTree = "<group>"; };
-		17E808A92A42E0E400E5CC1B /* Folder+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Folder+helper.swift"; sourceTree = "<group>"; };
-		17E808AB2A42E0F000E5CC1B /* Tag+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+helper.swift"; sourceTree = "<group>"; };
-		17E808AE2A42E3A200E5CC1B /* NSPredicate+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Helper.swift"; sourceTree = "<group>"; };
 		17E808B02A42E3FC00E5CC1B /* FolderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListView.swift; sourceTree = "<group>"; };
 		17E808B22A42E40D00E5CC1B /* SnippetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetListView.swift; sourceTree = "<group>"; };
 		17E808B42A42E41600E5CC1B /* SnippetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetDetailView.swift; sourceTree = "<group>"; };
@@ -143,10 +139,10 @@
 				17E808C02A430C7200E5CC1B /* ImageSelectorButton.swift */,
 				17E808C22A430F7900E5CC1B /* FavoriteToggleStyle.swift */,
 				17E808C42A4317EC00E5CC1B /* AddTagToSnippetsView.swift */,
+				17E61E9F2A4710AE008F29BD /* TagListView.swift */,
 				17E808C62A4318B100E5CC1B /* NewTagView.swift */,
 				17E808BB2A430B7800E5CC1B /* helper */,
-				17E808AD2A42E31A00E5CC1B /* core data */,
-				17E8087A2A42DE2D00E5CC1B /* SnippetBox.xcdatamodeld */,
+				17E808AD2A42E31A00E5CC1B /* swift data */,
 				17E8087F2A42DE2E00E5CC1B /* Assets.xcassets */,
 				17E808812A42DE2E00E5CC1B /* SnippetBox.entitlements */,
 				17E808822A42DE2E00E5CC1B /* Preview Content */,
@@ -182,22 +178,20 @@
 		17E808A62A42E0CE00E5CC1B /* model */ = {
 			isa = PBXGroup;
 			children = (
-				17E808A72A42E0DB00E5CC1B /* Snippet+helper.swift */,
-				17E808A92A42E0E400E5CC1B /* Folder+helper.swift */,
-				17E808AB2A42E0F000E5CC1B /* Tag+helper.swift */,
+				1782D6362A4573FD008B99A2 /* Snippet.swift */,
+				1782D6372A4573FD008B99A2 /* Tag.swift */,
+				17808C1E2A45879600B33D30 /* Folder.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
 		};
-		17E808AD2A42E31A00E5CC1B /* core data */ = {
+		17E808AD2A42E31A00E5CC1B /* swift data */ = {
 			isa = PBXGroup;
 			children = (
-				17E808782A42DE2D00E5CC1B /* Persistence.swift */,
-				17E808AE2A42E3A200E5CC1B /* NSPredicate+Helper.swift */,
 				17E808B62A42E49C00E5CC1B /* Color+Helper.swift */,
 				17E808A62A42E0CE00E5CC1B /* model */,
 			);
-			path = "core data";
+			path = "swift data";
 			sourceTree = "<group>";
 		};
 		17E808BB2A430B7800E5CC1B /* helper */ = {
@@ -346,23 +340,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E808C72A4318B100E5CC1B /* NewTagView.swift in Sources */,
-				17E808AF2A42E3A200E5CC1B /* NSPredicate+Helper.swift in Sources */,
-				17E8087C2A42DE2D00E5CC1B /* SnippetBox.xcdatamodeld in Sources */,
 				17E808BF2A430BBD00E5CC1B /* SnippetImageView.swift in Sources */,
 				17E808C52A4317EC00E5CC1B /* AddTagToSnippetsView.swift in Sources */,
 				17E808B32A42E40D00E5CC1B /* SnippetListView.swift in Sources */,
 				17E808C92A431EE700E5CC1B /* FolderRow.swift in Sources */,
-				17E808AA2A42E0E400E5CC1B /* Folder+helper.swift in Sources */,
 				17E808BD2A430B9100E5CC1B /* macOS.swift in Sources */,
+				1782D6392A4573FD008B99A2 /* Snippet.swift in Sources */,
 				17E808B12A42E3FC00E5CC1B /* FolderListView.swift in Sources */,
 				17E808C32A430F7900E5CC1B /* FavoriteToggleStyle.swift in Sources */,
 				17E808CB2A43221400E5CC1B /* iOS.swift in Sources */,
+				17E61EA02A4710AE008F29BD /* TagListView.swift in Sources */,
 				17E808772A42DE2D00E5CC1B /* SnippetBoxApp.swift in Sources */,
-				17E808A82A42E0DB00E5CC1B /* Snippet+helper.swift in Sources */,
+				1782D63A2A4573FD008B99A2 /* Tag.swift in Sources */,
+				17808C1F2A45879600B33D30 /* Folder.swift in Sources */,
 				17E8087E2A42DE2D00E5CC1B /* ContentView.swift in Sources */,
 				17E808B52A42E41600E5CC1B /* SnippetDetailView.swift in Sources */,
-				17E808AC2A42E0F000E5CC1B /* Tag+helper.swift in Sources */,
-				17E808792A42DE2D00E5CC1B /* Persistence.swift in Sources */,
 				17E808C12A430C7200E5CC1B /* ImageSelectorButton.swift in Sources */,
 				17E808B72A42E49C00E5CC1B /* Color+Helper.swift in Sources */,
 			);
@@ -533,10 +525,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.karinprater.SnippetBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -571,10 +563,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.karinprater.SnippetBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -735,19 +727,6 @@
 			productName = CodeEditor;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		17E8087A2A42DE2D00E5CC1B /* SnippetBox.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				17E8087B2A42DE2D00E5CC1B /* SnippetBox.xcdatamodel */,
-			);
-			currentVersion = 17E8087B2A42DE2D00E5CC1B /* SnippetBox.xcdatamodel */;
-			path = SnippetBox.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 17E8086B2A42DE2D00E5CC1B /* Project object */;
 }

@@ -39,9 +39,9 @@ struct NewTagView: View {
             }
             
             Button {
-                let tag = Tag(name: searchTerm, context: context)
+                let tag = Tag(name: searchTerm)
                 tag.color = selectedColor
-                snippet.tags.insert(tag)
+                snippet.tags.append(tag)
                 
                 dismiss()
             } label: {
@@ -67,7 +67,7 @@ extension Color: Identifiable {
 
 struct NewTagView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTagView(snippet: Snippet.example(context: PersistenceController.preview.container.viewContext),
+        NewTagView(snippet: Snippet.example(),
                    searchTerm: "test")
     }
 }
