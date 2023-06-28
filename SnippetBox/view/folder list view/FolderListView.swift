@@ -19,15 +19,16 @@ struct FolderListView: View {
     
     var body: some View {
         List(selection: $selectedFolder) {
-            Section("Folders") {
+ 
                 ForEach(folders) { folder in
                     NavigationLink(value: folder) {
                         FolderRow(folder: folder, selectedFolder: selectedFolder)
                     }
                 }
                 .onDelete(perform: deleteItems)
-            }
+            
         }
+        .navigationTitle("Folders")
         .toolbar {
 #if os(iOS)
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -60,9 +61,34 @@ struct FolderListView: View {
     }
 }
 
-struct FolderListView_Previews: PreviewProvider {
-    static var previews: some View {
+// working solutions for preview:
+
+/*
+#Preview {
+    NavigationView {
         FolderListView(selectedFolder: .constant(nil))
-            .modelContainer(for: Snippet.self)
+    }
+    .modelContainer(previewContainer)
+}
+ */
+
+#Preview {
+    MainActor.assumeIsolated {
+        NavigationView {
+            FolderListView(selectedFolder: .constant(nil))
+        }
+        .modelContainer(PreviewSampleData.container)
     }
 }
+
+/*
+struct FolderListView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            FolderListView(selectedFolder: .constant(nil))
+        }
+        .modelContainer(PreviewSampleData.container)
+    }
+}
+*/
+

@@ -50,6 +50,8 @@ struct SnippetDetailView: View {
                 CodeEditor(source: $snippet.code,
                            language: snippet.language,
                            theme: .pojoaque)
+                .shadow(radius: 5)
+                
                 Button {
                     UIPasteboard.general.copyText(snippet.code)
                 } label: {
@@ -59,7 +61,7 @@ struct SnippetDetailView: View {
                 .labelStyle(.iconOnly)
                 .padding(5)
             }
-            .shadow(radius: 5)
+           
             .padding(.bottom)
 
             
@@ -119,8 +121,6 @@ struct SnippetDetailView: View {
                 }
                 .popover(isPresented: $isTagEditorShown) {
                     AddTagToSnippetsView(snippet: snippet)
-                    
-                         //.environment(\.managedObjectContext, viewContext)
                 }
                 
                 Button(role: .destructive) {
@@ -132,16 +132,29 @@ struct SnippetDetailView: View {
 
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+//    MainActor.assumeIsolated { }
+
+#Preview {
+    ModelPreview { snippet in
+        NavigationStack {
+            SnippetDetailView(snippet: .constant(snippet))
+        }
     }
 }
 
 /*
 struct SnippetDetailView_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationStack {
-            SnippetDetailView(snippet: .constant(Snippet.example()))
+            SnippetDetailView(snippet: .constant(Snippet.preview))
         }
-        .modelContainer(for: Snippet.self)
+        .modelContainer(previewContainer)
     }
 }
+
 */

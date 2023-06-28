@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FolderEditorView: View {
     
@@ -46,6 +47,18 @@ struct FolderEditorView: View {
     }
 }
 
-#Preview {
-    FolderEditorView(folder: Folder.exampleWithSnippets())
+private struct PreviewFolderEditorView: View {
+    @Query(sort: \.creationDate, order: .forward)
+    private var folders: [Folder]
+    var body: some View {
+        FolderEditorView(folder: folders[0])
+    }
+}
+
+struct FolderEditorView_Previews: PreviewProvider {
+    static var previews: some View {
+      //  FolderEditorView(folder: Folder.example())
+        PreviewFolderEditorView()
+            .modelContainer(PreviewSampleData.container)
+    }
 }

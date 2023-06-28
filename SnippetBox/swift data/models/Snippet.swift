@@ -12,32 +12,53 @@ import CodeEditor
 
 @Model final public class Snippet {
     
-    @Attribute(originalName: "code_")
-    var code: String
+    @Attribute(originalName: "uuid_")
+    let uuid: UUID
     
     @Attribute(originalName: "creationDate_")
-    var creationDate: Date
+    let creationDate: Date
     
-    @Attribute(originalName: "uuid_")
-    var uuid: UUID
+    @Attribute(originalName: "code_")
+    var code: String
+
+    @Attribute(.externalStorage)
+    var image: Data?      
     
-    @Attribute(.externalStorage) var image: Data?
     var isFavorite: Bool
-    
-    var language_: String?
-    
-   // @Attribute(.transformable)
-    //var codingLanguage: CodeEditor.Language = .swift
     
     @Attribute(originalName: "notes_")
     var notes: String
     
+    @Attribute(.externalStorage)
     @Attribute(originalName: "title_")
     var title: String
     
-    var folder: Folder?
+    var folder: Folder?     // to-one relationships is always optional
     
-    var tags_: [Tag]? = nil
+    @Relationship( inverse: \Tag.snippets_)
+    var tags_: [Tag]? = nil // many-to-many relationships only works with optional
+    
+    var tags: [Tag] {
+        get { self.tags_ ?? [] }
+        set { self.tags_ = newValue  }
+    }
+    
+    var language_: String?
+    
+    //var codingLanguage: CodeEditor.Language = .swift
+    
+    var language: CodeEditor.Language {
+        get {
+            if let language_ = language_ {
+               return CodeEditor.Language.init(rawValue: language_)
+            } else {
+                return .swift
+            }
+        }
+        set { self.language_ = newValue.rawValue  }
+    }
+    
+    //MARK: - Init
     
     init(
         code: String = "",
@@ -60,22 +81,6 @@ import CodeEditor
         
         self.folder = folder
         self.tags = tags
-    }
-    
-    var language: CodeEditor.Language {
-        get {
-            if let language_ = language_ {
-               return CodeEditor.Language.init(rawValue: language_)
-            } else {
-                return .swift
-            }
-        }
-        set { self.language_ = newValue.rawValue  }
-    }
-    
-    var tags: [Tag] {
-        get { self.tags_ ?? [] }
-        set { self.tags_ = newValue  }
     }
     
     static func delete(_ snippet: Snippet) {
@@ -101,6 +106,14 @@ import CodeEditor
     
     // MARK: - preview
     
+    static var preview: Snippet = {
+        let snippet = Snippet(code: "test code", title: "snippet title")
+        //Task { @MainActor in
+        //    previewContainer.mainContext.insert(snippet)
+       // }
+        return snippet
+    }()
+    
     static func example() -> Snippet {
         let snippet = Snippet(title: "New snippet")
         snippet.language_ = CodeEditor.Language.swift.rawValue
@@ -117,13 +130,19 @@ import CodeEditor
                  }
                  """
         
-        snippet.tags.append(Tag.example())
-        snippet.tags.append(Tag.example2())
-        snippet.tags.append(Tag.example3())
+      // this will crash the preview:
+      //  snippet.tags.append(Tag.example())
+      //  snippet.tags.append(Tag.example2())
+      //  snippet.tags.append(Tag.example3())
         
         return snippet
     }
-    
+}
+
+extension Snippet: Comparable {
+    public static func < (lhs: Snippet, rhs: Snippet) -> Bool {
+        lhs.creationDate < rhs.creationDate
+    }
 }
 
 
@@ -136,3 +155,5 @@ enum CodingLanguage: String, Codable, CaseIterable, Identifiable {
     
     var id: Self { return self }
 }
+
+

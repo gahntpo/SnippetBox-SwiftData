@@ -13,11 +13,7 @@ struct AddTagToSnippetsView: View {
     let snippet: Snippet
     
     @State private var searchTerm: String = ""
-    
-    @Query(sort: \.creationDate, order: .forward)
-    var tags: [Tag]
-    
-    
+  
     @State private var selectedTags = Set<Tag>()
     
     @Environment(\.modelContext) private var modelContext
@@ -44,26 +40,16 @@ struct AddTagToSnippetsView: View {
                 }
             }
                 
-            
-            TagListView(searchTerm: searchTerm, selectedTags: $selectedTags, snippet: snippet)
-        
+            TagListView(searchTerm: searchTerm,
+                        selectedTags: $selectedTags,
+                        snippet: snippet)
         }
         .padding()
-        .onChange(of: searchTerm) { newValue in
-            
-            if newValue.count > 0 {
-                //tags.nsPredicate = NSPredicate(format: "%K CONTAINS[cd] %@",
-                //                               TagProperties.name,
-                //                               searchTerm as CVarArg)
-            } else {
-               // tags.nsPredicate = nil
-            }
-        }
     }
 }
 
-struct AddTagToSnippetsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddTagToSnippetsView(snippet: Snippet.example())
+#Preview {
+    ModelPreview { snippet in
+        AddTagToSnippetsView(snippet: snippet)
     }
 }

@@ -33,8 +33,10 @@ struct SnippetImageView: View {
     }
 }
 
-struct SnippetImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        SnippetImageView(snippet: Snippet.example())
+#Preview {
+    ModelPreview { snippet in
+        SnippetImageView(snippet: snippet)
     }
+    .modelContainer(previewContainer)
 }
+

@@ -14,11 +14,14 @@ struct TagListView: View {
     
     @Query(sort: \.creationDate, order: .forward)
     var tags: [Tag]
+    
     @Binding var selectedTags: Set<Tag>
     let snippet: Snippet
     let searchTerm: String
     
-    init(searchTerm: String, selectedTags: Binding<Set<Tag>>, snippet: Snippet) {
+    init(searchTerm: String,
+         selectedTags: Binding<Set<Tag>>,
+         snippet: Snippet) {
         self._selectedTags = selectedTags
         self.snippet = snippet
         self.searchTerm = searchTerm
@@ -68,8 +71,23 @@ struct TagListView: View {
 }
 
 #Preview {
-    VStack {
-        TagListView(searchTerm: "test", selectedTags: .constant([]), snippet: Snippet.example())
+    ModelPreview { snippet in
+        VStack {
+            TagListView(searchTerm: "test",
+                        selectedTags: .constant([]),
+                        snippet: snippet)
+        }
     }
-    .modelContainer(for: Snippet.self)
 }
+
+
+/*
+ struct TagListView_Previews: PreviewProvider {
+ static var previews: some View {
+ VStack {
+ TagListView(searchTerm: "test", selectedTags: .constant([]), snippet: Snippet.example())
+ }
+ .modelContainer(PreviewSampleData.container)
+ }
+ }
+ */

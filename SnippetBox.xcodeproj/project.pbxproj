@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		177464DB2A482BC0008702DC /* FolderEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177464DA2A482BC0008702DC /* FolderEditorView.swift */; };
+		177464DD2A4AAEFD008702DC /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177464DC2A4AAEFD008702DC /* PreviewSampleData.swift */; };
+		177464E12A4C0545008702DC /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177464E02A4C0545008702DC /* ModelPreview.swift */; };
 		17808C1F2A45879600B33D30 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17808C1E2A45879600B33D30 /* Folder.swift */; };
 		1782D6392A4573FD008B99A2 /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782D6362A4573FD008B99A2 /* Snippet.swift */; };
 		1782D63A2A4573FD008B99A2 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782D6372A4573FD008B99A2 /* Tag.swift */; };
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		177464DA2A482BC0008702DC /* FolderEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditorView.swift; sourceTree = "<group>"; };
+		177464DC2A4AAEFD008702DC /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
+		177464E02A4C0545008702DC /* ModelPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPreview.swift; sourceTree = "<group>"; };
 		17808C1E2A45879600B33D30 /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		1782D6362A4573FD008B99A2 /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
 		1782D6372A4573FD008B99A2 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -175,6 +179,33 @@
 			path = "style guide";
 			sourceTree = "<group>";
 		};
+		177464E22A4C0EBC008702DC /* preview */ = {
+			isa = PBXGroup;
+			children = (
+				177464DC2A4AAEFD008702DC /* PreviewSampleData.swift */,
+				177464E02A4C0545008702DC /* ModelPreview.swift */,
+			);
+			path = preview;
+			sourceTree = "<group>";
+		};
+		177464E32A4C0EC2008702DC /* models */ = {
+			isa = PBXGroup;
+			children = (
+				1782D6362A4573FD008B99A2 /* Snippet.swift */,
+				1782D6372A4573FD008B99A2 /* Tag.swift */,
+				17808C1E2A45879600B33D30 /* Folder.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		177464E42A4C0ECE008702DC /* data helpers */ = {
+			isa = PBXGroup;
+			children = (
+				17E808B62A42E49C00E5CC1B /* Color+Helper.swift */,
+			);
+			path = "data helpers";
+			sourceTree = "<group>";
+		};
 		17E8086A2A42DE2D00E5CC1B = {
 			isa = PBXGroup;
 			children = (
@@ -237,10 +268,9 @@
 		17E808AD2A42E31A00E5CC1B /* swift data */ = {
 			isa = PBXGroup;
 			children = (
-				1782D6362A4573FD008B99A2 /* Snippet.swift */,
-				1782D6372A4573FD008B99A2 /* Tag.swift */,
-				17808C1E2A45879600B33D30 /* Folder.swift */,
-				17E808B62A42E49C00E5CC1B /* Color+Helper.swift */,
+				177464E32A4C0EC2008702DC /* models */,
+				177464E42A4C0ECE008702DC /* data helpers */,
+				177464E22A4C0EBC008702DC /* preview */,
 			);
 			path = "swift data";
 			sourceTree = "<group>";
@@ -403,9 +433,11 @@
 				17E61EA02A4710AE008F29BD /* TagListView.swift in Sources */,
 				17E808772A42DE2D00E5CC1B /* SnippetBoxApp.swift in Sources */,
 				1782D63A2A4573FD008B99A2 /* Tag.swift in Sources */,
+				177464E12A4C0545008702DC /* ModelPreview.swift in Sources */,
 				17808C1F2A45879600B33D30 /* Folder.swift in Sources */,
 				17E8087E2A42DE2D00E5CC1B /* ContentView.swift in Sources */,
 				17E808B52A42E41600E5CC1B /* SnippetDetailView.swift in Sources */,
+				177464DD2A4AAEFD008702DC /* PreviewSampleData.swift in Sources */,
 				177464DB2A482BC0008702DC /* FolderEditorView.swift in Sources */,
 				17E808C12A430C7200E5CC1B /* ImageSelectorButton.swift in Sources */,
 				17E808B72A42E49C00E5CC1B /* Color+Helper.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FolderRow: View {
     var folder: Folder
@@ -74,8 +75,30 @@ struct FolderRow: View {
     }
 }
 
-struct FolderRow_Previews: PreviewProvider {
-    static var previews: some View {
-        FolderRow(folder: Folder.exampleWithSnippets(), selectedFolder: nil)
+#Preview {
+    ModelPreview { folder in
+        FolderRow(folder: folder, selectedFolder: nil)
+            .padding()
     }
 }
+
+/*
+private struct PreviewFolderRowView: View {
+    @Query(sort: \.creationDate, order: .forward)
+    private var folders: [Folder]
+    var body: some View {
+        FolderRow(folder: folders[0], selectedFolder: nil)
+    }
+}
+
+struct FolderRow_Previews: PreviewProvider {
+    static var previews: some View {
+        PreviewFolderRowView()
+            .padding()
+        
+            .modelContainer(PreviewSampleData.container)
+           
+       // FolderRow(folder: Folder.exampleWithSnippets(), selectedFolder: nil)
+    }
+}
+*/

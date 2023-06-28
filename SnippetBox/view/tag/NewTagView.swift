@@ -65,9 +65,10 @@ extension Color: Identifiable {
     }
 }
 
-struct NewTagView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewTagView(snippet: Snippet.example(),
-                   searchTerm: "test")
+
+#Preview {
+    ModelPreview { snippet in
+        NewTagView(snippet: snippet, searchTerm: "test")
     }
 }
+

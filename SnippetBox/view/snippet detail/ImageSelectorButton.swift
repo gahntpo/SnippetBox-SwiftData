@@ -43,8 +43,10 @@ struct ImageSelectorButton: View {
     }
 }
 
-struct ImageSelectorButton_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageSelectorButton(snippet: Snippet.example())
+#Preview {
+    ModelPreview { snippet in
+        ImageSelectorButton(snippet: snippet)
     }
+    .modelContainer(previewContainer)
 }
+

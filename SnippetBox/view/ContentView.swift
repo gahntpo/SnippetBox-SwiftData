@@ -23,7 +23,7 @@ struct ContentView: View {
             }
                 
         } detail: {
-            if let snippet = selectedSnippet {
+            if selectedSnippet != nil {
                 SnippetDetailView(snippet: $selectedSnippet)
             } else {
                 Text("Placeholder")
@@ -32,9 +32,18 @@ struct ContentView: View {
     }
 }
 
+#Preview {
+    MainActor.assumeIsolated {
+        ContentView()
+            .modelContainer(PreviewSampleData.container)
+    }
+}
+
+/*
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .modelContainer(for: Snippet.self)
+            .modelContainer(PreviewSampleData.container)
     }
 }
+*/
