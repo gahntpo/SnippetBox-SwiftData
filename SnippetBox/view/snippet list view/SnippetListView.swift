@@ -28,6 +28,7 @@ struct SnippetListView: View {
     }
     
     var body: some View {
+        
         List(selection: $selectedSnippet) {
             ForEach(folder.snippets.sorted()) { snippet in
            // ForEach(snippets) { snippet in
@@ -46,6 +47,14 @@ struct SnippetListView: View {
                         .foregroundColor(.secondary)
                 }
                 .tag(snippet)
+                .swipeActions {
+                    Button(role: .destructive) {
+                        Snippet.delete(snippet)
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
+
+                }
             }
            
         }

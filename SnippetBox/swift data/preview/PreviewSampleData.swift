@@ -41,6 +41,8 @@ let previewContainer: ModelContainer = {
     do {
         let container = try ModelContainer(for: Snippet.self,
                                            ModelConfiguration(inMemory: true))
+        
+    
         Task { @MainActor in
             
             let snip = Snippet.example()

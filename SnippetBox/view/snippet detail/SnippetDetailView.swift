@@ -10,12 +10,8 @@ import CodeEditor
 
 struct SnippetDetailView: View {
     
-    init(snippet: Binding<Snippet?>) {
-        self._snippet = Binding.constant(snippet.wrappedValue ?? Snippet())
-    }
-    
     @Environment(\.modelContext) private var context
-    @Binding var snippet: Snippet
+    @Bindable var snippet: Snippet
     
     @State private var isNotesAreaShown: Bool = false
     @State private var isTagEditorShown = false
@@ -125,6 +121,7 @@ struct SnippetDetailView: View {
                 
                 Button(role: .destructive) {
                     Snippet.delete(snippet)
+                    
                 } label: {
                     Label("Delete", systemImage: "trash")
                 }
@@ -141,7 +138,7 @@ struct SnippetDetailView: View {
 #Preview {
     ModelPreview { snippet in
         NavigationStack {
-            SnippetDetailView(snippet: .constant(snippet))
+            SnippetDetailView(snippet: snippet)
         }
     }
 }

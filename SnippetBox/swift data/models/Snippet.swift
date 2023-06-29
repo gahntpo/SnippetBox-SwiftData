@@ -86,6 +86,7 @@ import CodeEditor
     static func delete(_ snippet: Snippet) {
         if let context = snippet.context {
             context.delete(snippet)
+            //try? context.save() // suggested fix
         }
     }
     

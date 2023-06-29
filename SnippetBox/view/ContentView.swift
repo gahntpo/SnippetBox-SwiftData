@@ -23,8 +23,8 @@ struct ContentView: View {
             }
                 
         } detail: {
-            if selectedSnippet != nil {
-                SnippetDetailView(snippet: $selectedSnippet)
+            if let snippet = selectedSnippet {
+                SnippetDetailView(snippet: snippet)
             } else {
                 Text("Placeholder")
             }
