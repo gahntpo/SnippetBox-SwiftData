@@ -13,7 +13,7 @@ struct SnippetBoxApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(for: Snippet.self)
+                .modelContainer(for: Snippet.self, isUndoEnabled: true)
         }
     }
 }
