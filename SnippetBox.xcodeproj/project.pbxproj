@@ -13,6 +13,10 @@
 		17808C1F2A45879600B33D30 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17808C1E2A45879600B33D30 /* Folder.swift */; };
 		1782D6392A4573FD008B99A2 /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782D6362A4573FD008B99A2 /* Snippet.swift */; };
 		1782D63A2A4573FD008B99A2 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782D6372A4573FD008B99A2 /* Tag.swift */; };
+		17C4C3C42A4DE15C008B0F55 /* SnippetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4C3C32A4DE15C008B0F55 /* SnippetRow.swift */; };
+		17C4C3C62A4E9F0B008B0F55 /* TagSorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4C3C52A4E9F0B008B0F55 /* TagSorting.swift */; };
+		17C4C3C92A4EA7CD008B0F55 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4C3C82A4EA7CD008B0F55 /* FlowLayout.swift */; };
+		17C4C3CB2A4EA842008B0F55 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4C3CA2A4EA842008B0F55 /* TagCell.swift */; };
 		17E5C3502A4C2D2A001F6666 /* UndoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C34F2A4C2D2A001F6666 /* UndoButton.swift */; };
 		17E61EA02A4710AE008F29BD /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E61E9F2A4710AE008F29BD /* TagListView.swift */; };
 		17E808772A42DE2D00E5CC1B /* SnippetBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808762A42DE2D00E5CC1B /* SnippetBoxApp.swift */; };
@@ -61,6 +65,10 @@
 		17808C1E2A45879600B33D30 /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		1782D6362A4573FD008B99A2 /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
 		1782D6372A4573FD008B99A2 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		17C4C3C32A4DE15C008B0F55 /* SnippetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetRow.swift; sourceTree = "<group>"; };
+		17C4C3C52A4E9F0B008B0F55 /* TagSorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSorting.swift; sourceTree = "<group>"; };
+		17C4C3C82A4EA7CD008B0F55 /* FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		17C4C3CA2A4EA842008B0F55 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		17E5C34F2A4C2D2A001F6666 /* UndoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoButton.swift; sourceTree = "<group>"; };
 		17E61E9F2A4710AE008F29BD /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		17E808732A42DE2D00E5CC1B /* SnippetBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				17E808B22A42E40D00E5CC1B /* SnippetListView.swift */,
+				17C4C3C32A4DE15C008B0F55 /* SnippetRow.swift */,
 			);
 			path = "snippet list view";
 			sourceTree = "<group>";
@@ -161,6 +170,7 @@
 				17E808C42A4317EC00E5CC1B /* AddTagToSnippetsView.swift */,
 				17E61E9F2A4710AE008F29BD /* TagListView.swift */,
 				17E808C62A4318B100E5CC1B /* NewTagView.swift */,
+				17C4C3CA2A4EA842008B0F55 /* TagCell.swift */,
 			);
 			path = tag;
 			sourceTree = "<group>";
@@ -205,8 +215,17 @@
 			isa = PBXGroup;
 			children = (
 				17E808B62A42E49C00E5CC1B /* Color+Helper.swift */,
+				17C4C3C52A4E9F0B008B0F55 /* TagSorting.swift */,
 			);
 			path = "data helpers";
+			sourceTree = "<group>";
+		};
+		17C4C3C72A4EA789008B0F55 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				17C4C3C82A4EA7CD008B0F55 /* FlowLayout.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		17E8086A2A42DE2D00E5CC1B = {
@@ -281,6 +300,7 @@
 		17E808BB2A430B7800E5CC1B /* helper */ = {
 			isa = PBXGroup;
 			children = (
+				17C4C3C72A4EA789008B0F55 /* views */,
 				177464D92A482B75008702DC /* style guide */,
 				177464D82A482B6A008702DC /* cross platform */,
 			);
@@ -424,10 +444,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E808C72A4318B100E5CC1B /* NewTagView.swift in Sources */,
+				17C4C3C42A4DE15C008B0F55 /* SnippetRow.swift in Sources */,
+				17C4C3C92A4EA7CD008B0F55 /* FlowLayout.swift in Sources */,
 				17E808BF2A430BBD00E5CC1B /* SnippetImageView.swift in Sources */,
 				17E808C52A4317EC00E5CC1B /* AddTagToSnippetsView.swift in Sources */,
 				17E808B32A42E40D00E5CC1B /* SnippetListView.swift in Sources */,
+				17C4C3C62A4E9F0B008B0F55 /* TagSorting.swift in Sources */,
 				17E808C92A431EE700E5CC1B /* FolderRow.swift in Sources */,
+				17C4C3CB2A4EA842008B0F55 /* TagCell.swift in Sources */,
 				17E808BD2A430B9100E5CC1B /* macOS.swift in Sources */,
 				1782D6392A4573FD008B99A2 /* Snippet.swift in Sources */,
 				17E808B12A42E3FC00E5CC1B /* FolderListView.swift in Sources */,

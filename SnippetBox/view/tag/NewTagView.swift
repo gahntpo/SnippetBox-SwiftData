@@ -48,6 +48,8 @@ struct NewTagView: View {
                 Text("Create as new Tag")
             }
             .disabled(searchTerm.count == 0)
+            .buttonStyle(.bordered)
+            .padding()
         }
     }
 }

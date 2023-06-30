@@ -14,10 +14,8 @@ struct SnippetImageView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    
     var body: some View {
-        
-        VStack {
+       VStack {
             
             if let data = snippet.image, let uiimage = UIImage(data: data) {
                 Image(uiImage: uiimage)

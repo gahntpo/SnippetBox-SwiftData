@@ -32,20 +32,7 @@ struct SnippetListView: View {
         List(selection: $selectedSnippet) {
             ForEach(folder.snippets.sorted()) { snippet in
            // ForEach(snippets) { snippet in
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(snippet.title)
-                        
-                        Spacer()
-                        
-                        if snippet.isFavorite {
-                            Image(systemName: "star.fill")
-                                .foregroundColor(.yellow)
-                        }
-                    }
-                    Text(snippet.creationDate, format: .dateTime)
-                        .foregroundColor(.secondary)
-                }
+                SnippetRow(snippet: snippet)
                 .tag(snippet)
                 .swipeActions {
                     Button(role: .destructive) {

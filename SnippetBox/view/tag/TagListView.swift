@@ -12,7 +12,7 @@ struct TagListView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    @Query(sort: \.creationDate, order: .forward)
+    @Query(sort: \.name, order: .forward)
     var tags: [Tag]
     
     @Binding var selectedTags: Set<Tag>
@@ -20,6 +20,7 @@ struct TagListView: View {
     let searchTerm: String
     
     init(searchTerm: String,
+         sorting: TagSorting,
          selectedTags: Binding<Set<Tag>>,
          snippet: Snippet) {
         self._selectedTags = selectedTags
@@ -29,9 +30,10 @@ struct TagListView: View {
         if searchTerm.count > 0 {
             self._tags = Query(filter: #Predicate {
                 $0.name.contains(searchTerm)
-            })
+            }, sort: [sorting.sortDescriptor])
+            
         } else {
-            return
+            self._tags = Query(sort: [sorting.sortDescriptor])
         }
     }
     
@@ -74,6 +76,7 @@ struct TagListView: View {
     ModelPreview { snippet in
         VStack {
             TagListView(searchTerm: "test",
+                        sorting: .aToZ,
                         selectedTags: .constant([]),
                         snippet: snippet)
         }

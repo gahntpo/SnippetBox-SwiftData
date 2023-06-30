@@ -61,23 +61,25 @@ struct SnippetDetailView: View {
             .padding(.bottom)
 
             
-            HStack {
+           HStack(alignment: .firstTextBaseline) {
                 Text("Your Tags:")
                     .underline()
-                ForEach(snippet.tags) { tag in
-                    HStack {
-                        Image(systemName: "tag.fill")
-                            .foregroundColor(tag.color)
-                        Text(tag.name)
-                    }
-                        .padding(5)
-                        
-                        .background(
-                            ZStack {
-                                Capsule().fill(Color.white)
-                                Capsule().stroke(tag.color)
+                
+                FlowLayout(alignment: .leading) {
+                    
+                    ForEach(snippet.tags) { tag in
+                        TagCell(tag: tag)
+                            .contextMenu {
+                                Button(role: .destructive) {
+                                    if let index = snippet.tags.firstIndex(where: { $0.uuid == tag.uuid }) {
+                                        snippet.tags.remove(at: index)
+                                    }
+                                } label: {
+                                    Text("Remove from snippet")
+                                }
+
                             }
-                        )
+                    }
                 }
                 
                 Spacer()
@@ -101,14 +103,15 @@ struct SnippetDetailView: View {
                     .border(Color.gray)
             }
             
-            
+           ImageSelectorButton(snippet: snippet)
             SnippetImageView(snippet: snippet)
            
         }
         .padding()
         .toolbar {
             ToolbarItemGroup {
-                ImageSelectorButton(snippet: snippet)
+               // ImageSelectorButton(snippet: snippet)
+               // does not work here
                 
                 Button {
                     isTagEditorShown.toggle()
