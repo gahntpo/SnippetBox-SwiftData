@@ -19,14 +19,12 @@ struct FolderListView: View {
     
     var body: some View {
         List(selection: $selectedFolder) {
- 
-                ForEach(folders) { folder in
-                    NavigationLink(value: folder) {
-                        FolderRow(folder: folder, selectedFolder: selectedFolder)
-                    }
+            ForEach(folders) { folder in
+                NavigationLink(value: folder) {
+                    FolderRow(folder: folder, selectedFolder: selectedFolder)
                 }
-                .onDelete(perform: deleteItems)
-            
+            }
+            .onDelete(perform: deleteItems)
         }
         .navigationTitle("Folders")
         .toolbar {
