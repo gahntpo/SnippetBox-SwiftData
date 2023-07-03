@@ -4,6 +4,7 @@ This is a demo project that I made to test the new SwiftData framework. I wrote 
 Have a look here:
 - [Modeling Data in SwiftData](https://www.swiftyplace.com/blog/modeling-data-in-swiftdata)
 - [SwiftData Stack: Understanding Schema, Container & Context](https://www.swiftyplace.com/blog/swiftdata-stack-understanding-containers)
+- [Data Handling in SwiftData: Create, Read, Update, Delete](https://www.swiftyplace.com/blog/crud-in-swift-data)
 - [How to convert a CoreData project to SwiftData](https://www.swiftyplace.com/blog/how-to-convert-a-coredata-project-to-swiftdata)
 
 
