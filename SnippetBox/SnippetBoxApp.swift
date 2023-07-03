@@ -12,8 +12,18 @@ import SwiftData
 struct SnippetBoxApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .modelContainer(for: Snippet.self, isUndoEnabled: true)
+            TabView {
+                ContentView()
+                    .tabItem { Label("main", systemImage: "circle") }
+                
+                PropertPredicateSnippetListExample()
+                    .tabItem { Label("query", systemImage: "camera.filters") }
+                
+                
+                RelationshipPredicateSnippetListExample()
+                    .tabItem { Label("query relationship", systemImage: "line.3.horizontal.decrease.circle") }
+            }
+            .modelContainer(for: Snippet.self, isUndoEnabled: true)
         }
     }
 }

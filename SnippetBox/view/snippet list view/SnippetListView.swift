@@ -18,11 +18,17 @@ struct SnippetListView: View {
     @Binding var selectedSnippet: Snippet?
     
     init(for folder: Folder, selectedSnippet: Binding<Snippet?>) {
-      /*
+      
+        // does not work, uuid not supported with Xcode 15 beta 2
+        // #Predicate does not support UUID, Date, and URL properties. (109539652)
+        /*
+        
         self._snippets = Query(filter: #Predicate {
-            $0.folder == folder
-        }, sort: \.creationDate)
-      */
+         $0.folder?.id == folder.id
+         // $0.folder == folder
+     }, sort: \.creationDate)
+        */
+        
         self.folder = folder
         self._selectedSnippet = selectedSnippet
     }

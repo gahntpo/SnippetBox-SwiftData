@@ -28,21 +28,20 @@ struct FolderListView: View {
         }
         .navigationTitle("Folders")
         .toolbar {
-#if os(iOS)
+            #if os(iOS)
             ToolbarItem(placement: .navigationBarTrailing) {
                 EditButton()
             }
-#endif
+            #endif
             ToolbarItem {
-                Button(action: addItem) {
+                Button(action: addFolder) {
                     Label("Add Folder", systemImage: "folder.badge.plus")
                 }
             }
         }
     }
     
-    
-    private func addItem() {
+    private func addFolder() {
         withAnimation {
             let folder = Folder(name: "new folder")
             context.insert(object: folder)

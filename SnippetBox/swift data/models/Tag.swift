@@ -66,15 +66,15 @@ import SwiftData
 
     
     static func example() -> Tag {
-        Tag(color_: "000000", name: "my tag")
+        Tag(color_: "000000", name: "My tag")
     }
     
     static func example2() -> Tag {
-        Tag(color_: "4357FF", name: "my very long tag")
+        Tag(color_: "4357FF", name: "My very long tag")
     }
     
     static func example3() -> Tag {
-        Tag(color_: "435700", name: "something awesome")
+        Tag(color_: "435700", name: "Something awesome")
     }
 }
 

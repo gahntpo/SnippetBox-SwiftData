@@ -29,14 +29,13 @@ import CodeEditor
     @Attribute(originalName: "notes_")
     var notes: String
     
-    @Attribute(.externalStorage)
     @Attribute(originalName: "title_")
     var title: String
     
     var folder: Folder?     // to-one relationships is always optional
     
     @Relationship( inverse: \Tag.snippets_)
-    var tags_: [Tag]? = nil // many-to-many relationships only works with optional
+    var tags_: [Tag]? = nil // relationships only works with optional
     
     var tags: [Tag] {
         get { self.tags_ ?? [] }
@@ -64,13 +63,14 @@ import CodeEditor
         code: String = "",
         image: Data? = nil,
         isFavorite: Bool = false,
-        language_: String? = nil,
+        language_: String? = CodeEditor.Language.swift.rawValue,
         notes: String = "",
         title: String = "",
         folder: Folder? = nil,
-        tags_: [Tag] = []
+        tags_: [Tag] = [],
+        creationDate: Date = Date()
     ) {
-        self.creationDate = Date()
+        self.creationDate = creationDate
         self.uuid = UUID()
         self.image = image
         self.code = code
@@ -116,7 +116,7 @@ import CodeEditor
     }()
     
     static func example() -> Snippet {
-        let snippet = Snippet(title: "New snippet")
+        let snippet = Snippet(title: "My test snippet")
         snippet.language_ = CodeEditor.Language.swift.rawValue
         snippet.code = """
                    List {
@@ -131,11 +131,32 @@ import CodeEditor
                  }
                  """
         
-      // this will crash the preview:
+      // this will crash the preview which does not work currently with relationships:
       //  snippet.tags.append(Tag.example())
       //  snippet.tags.append(Tag.example2())
       //  snippet.tags.append(Tag.example3())
         
+        return snippet
+    }
+    
+    static func example2() -> Snippet {
+        let snippet = Snippet(title: "My favorite snippet")
+        snippet.language_ = CodeEditor.Language.http.rawValue
+        snippet.isFavorite = true
+        return snippet
+    }
+    
+    
+    static func example3() -> Snippet {
+        let snippet = Snippet(title: "Old snippet", creationDate: Date() - 1000)
+        snippet.language_ = CodeEditor.Language.swift.rawValue
+        snippet.isFavorite = true
+        return snippet
+    }
+    
+    static func example4() -> Snippet {
+        let snippet = Snippet(title: "snippet from yesterday", creationDate: Date() - 100000)
+        snippet.language_ = CodeEditor.Language.http.rawValue
         return snippet
     }
 }

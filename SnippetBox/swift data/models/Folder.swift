@@ -21,9 +21,13 @@ import SwiftData
     @Attribute(originalName: "uuid_")
     var uuid: UUID
     
-    @Attribute( originalName: "snippets_")
-    @Relationship(.cascade, inverse: \Snippet.folder) var snippets: [Snippet]
     // array - but data is not keeping sort order
+    @Relationship(.cascade, inverse: \Snippet.folder) var snippets_: [Snippet]?
+    
+    var snippets: [Snippet] {
+        get { self.snippets_ ?? [] }
+        set { self.snippets_ = newValue  }
+    }
     
     //MARK: - Init
     

@@ -19,6 +19,12 @@
 		17C4C3CB2A4EA842008B0F55 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4C3CA2A4EA842008B0F55 /* TagCell.swift */; };
 		17C4C3CF2A4EAF0E008B0F55 /* snippbox_demo_sorting_filtering.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17C4C3CD2A4EAF0E008B0F55 /* snippbox_demo_sorting_filtering.jpg */; };
 		17C4C3D02A4EAF0E008B0F55 /* snippbox_demo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17C4C3CE2A4EAF0E008B0F55 /* snippbox_demo.jpg */; };
+		17D033EE2A52C290002526F8 /* PropertPredicateSnippetListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D033ED2A52C290002526F8 /* PropertPredicateSnippetListExample.swift */; };
+		17D033F02A52C710002526F8 /* DetailedPropertySnippetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D033EF2A52C710002526F8 /* DetailedPropertySnippetRow.swift */; };
+		17D033F42A52CCE4002526F8 /* SnippetExampleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D033F32A52CCE4002526F8 /* SnippetExampleList.swift */; };
+		17D033F62A52D424002526F8 /* RelationshipPredicateSnippetListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D033F52A52D424002526F8 /* RelationshipPredicateSnippetListExample.swift */; };
+		17D033F82A52D899002526F8 /* DetailedRelationshipSnippetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D033F72A52D899002526F8 /* DetailedRelationshipSnippetRow.swift */; };
+		17D033FA2A52DA9C002526F8 /* MultiPropertPredicateSnippetListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D033F92A52DA9C002526F8 /* MultiPropertPredicateSnippetListExample.swift */; };
 		17E5C3502A4C2D2A001F6666 /* UndoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C34F2A4C2D2A001F6666 /* UndoButton.swift */; };
 		17E61EA02A4710AE008F29BD /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E61E9F2A4710AE008F29BD /* TagListView.swift */; };
 		17E808772A42DE2D00E5CC1B /* SnippetBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808762A42DE2D00E5CC1B /* SnippetBoxApp.swift */; };
@@ -73,6 +79,12 @@
 		17C4C3CA2A4EA842008B0F55 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		17C4C3CD2A4EAF0E008B0F55 /* snippbox_demo_sorting_filtering.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snippbox_demo_sorting_filtering.jpg; sourceTree = "<group>"; };
 		17C4C3CE2A4EAF0E008B0F55 /* snippbox_demo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snippbox_demo.jpg; sourceTree = "<group>"; };
+		17D033ED2A52C290002526F8 /* PropertPredicateSnippetListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertPredicateSnippetListExample.swift; sourceTree = "<group>"; };
+		17D033EF2A52C710002526F8 /* DetailedPropertySnippetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPropertySnippetRow.swift; sourceTree = "<group>"; };
+		17D033F32A52CCE4002526F8 /* SnippetExampleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetExampleList.swift; sourceTree = "<group>"; };
+		17D033F52A52D424002526F8 /* RelationshipPredicateSnippetListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipPredicateSnippetListExample.swift; sourceTree = "<group>"; };
+		17D033F72A52D899002526F8 /* DetailedRelationshipSnippetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRelationshipSnippetRow.swift; sourceTree = "<group>"; };
+		17D033F92A52DA9C002526F8 /* MultiPropertPredicateSnippetListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPropertPredicateSnippetListExample.swift; sourceTree = "<group>"; };
 		17E5C34F2A4C2D2A001F6666 /* UndoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoButton.swift; sourceTree = "<group>"; };
 		17E61E9F2A4710AE008F29BD /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		17E808732A42DE2D00E5CC1B /* SnippetBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +253,19 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		17D033EC2A52C25A002526F8 /* predicate examples */ = {
+			isa = PBXGroup;
+			children = (
+				17D033F32A52CCE4002526F8 /* SnippetExampleList.swift */,
+				17D033ED2A52C290002526F8 /* PropertPredicateSnippetListExample.swift */,
+				17D033F92A52DA9C002526F8 /* MultiPropertPredicateSnippetListExample.swift */,
+				17D033F52A52D424002526F8 /* RelationshipPredicateSnippetListExample.swift */,
+				17D033EF2A52C710002526F8 /* DetailedPropertySnippetRow.swift */,
+				17D033F72A52D899002526F8 /* DetailedRelationshipSnippetRow.swift */,
+			);
+			path = "predicate examples";
+			sourceTree = "<group>";
+		};
 		17E8086A2A42DE2D00E5CC1B = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +292,7 @@
 			children = (
 				17E808762A42DE2D00E5CC1B /* SnippetBoxApp.swift */,
 				177464D32A482B0A008702DC /* view */,
+				17D033EC2A52C25A002526F8 /* predicate examples */,
 				17E808BB2A430B7800E5CC1B /* helper */,
 				17E808AD2A42E31A00E5CC1B /* swift data */,
 				17E8087F2A42DE2E00E5CC1B /* Assets.xcassets */,
@@ -467,11 +493,14 @@
 				17E808B32A42E40D00E5CC1B /* SnippetListView.swift in Sources */,
 				17C4C3C62A4E9F0B008B0F55 /* TagSorting.swift in Sources */,
 				17E808C92A431EE700E5CC1B /* FolderRow.swift in Sources */,
+				17D033F82A52D899002526F8 /* DetailedRelationshipSnippetRow.swift in Sources */,
 				17C4C3CB2A4EA842008B0F55 /* TagCell.swift in Sources */,
 				17E808BD2A430B9100E5CC1B /* macOS.swift in Sources */,
 				1782D6392A4573FD008B99A2 /* Snippet.swift in Sources */,
 				17E808B12A42E3FC00E5CC1B /* FolderListView.swift in Sources */,
 				17E808C32A430F7900E5CC1B /* FavoriteToggleStyle.swift in Sources */,
+				17D033EE2A52C290002526F8 /* PropertPredicateSnippetListExample.swift in Sources */,
+				17D033F42A52CCE4002526F8 /* SnippetExampleList.swift in Sources */,
 				17E808CB2A43221400E5CC1B /* iOS.swift in Sources */,
 				17E61EA02A4710AE008F29BD /* TagListView.swift in Sources */,
 				17E808772A42DE2D00E5CC1B /* SnippetBoxApp.swift in Sources */,
@@ -479,8 +508,11 @@
 				177464E12A4C0545008702DC /* ModelPreview.swift in Sources */,
 				17808C1F2A45879600B33D30 /* Folder.swift in Sources */,
 				17E8087E2A42DE2D00E5CC1B /* ContentView.swift in Sources */,
+				17D033F62A52D424002526F8 /* RelationshipPredicateSnippetListExample.swift in Sources */,
 				17E808B52A42E41600E5CC1B /* SnippetDetailView.swift in Sources */,
+				17D033F02A52C710002526F8 /* DetailedPropertySnippetRow.swift in Sources */,
 				177464DD2A4AAEFD008702DC /* PreviewSampleData.swift in Sources */,
+				17D033FA2A52DA9C002526F8 /* MultiPropertPredicateSnippetListExample.swift in Sources */,
 				177464DB2A482BC0008702DC /* FolderEditorView.swift in Sources */,
 				17E808C12A430C7200E5CC1B /* ImageSelectorButton.swift in Sources */,
 				17E808B72A42E49C00E5CC1B /* Color+Helper.swift in Sources */,

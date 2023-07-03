@@ -22,33 +22,17 @@ struct AddTagToSnippetsView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-              
-                HStack {
-                    TextField("search", text: $searchTerm)
-                        .textFieldStyle(.roundedBorder)
-                      
-                    if searchTerm.count > 0 {
-                        Button {
-                            searchTerm = ""
-                        } label: {
-                            Image(systemName: "clear")
-                            
-                        }
-                        .foregroundColor(.pink)
-                    }
-                }
-                    
-                TagListView(searchTerm: searchTerm,
-                            sorting: tagSorting,
-                            selectedTags: $selectedTags,
-                            snippet: snippet)
-            }.padding(.horizontal)
-           
+            TagListView(searchTerm: searchTerm,
+                        sorting: tagSorting,
+                        selectedTags: $selectedTags,
+                        snippet: snippet)
+            .padding(.horizontal)
             .navigationTitle("Add tags to \(snippet.title)")
-            #if os(iOS)
+             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
+            
+            .searchable(text: $searchTerm)
             .toolbar(content: {
                 Menu {
                     Picker(selection: $tagSorting) {
@@ -58,12 +42,12 @@ struct AddTagToSnippetsView: View {
                     } label: {
                         Text("Sort Tags by")
                     }
-
+                    
                 } label: {
                     Label("Sorting", systemImage: "slider.horizontal.3")
                 }
-
-        })
+                
+            })
         }
         .frame(minWidth: 300, minHeight: 300)
     }

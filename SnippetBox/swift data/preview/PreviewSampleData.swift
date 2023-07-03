@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 /**
- Preview sample data.
+ Preview sample data. from demo project Backyard Birds
  */
 actor PreviewSampleData {
     @MainActor
@@ -18,7 +18,7 @@ actor PreviewSampleData {
         let configuration = ModelConfiguration(inMemory: true)
         let container = try! ModelContainer(for: schema, configurations: [configuration])
         let sampleData: [any PersistentModel] = [
-            Snippet.example(), Folder.exampleWithSnippets()
+            Snippet.example2(), Folder.exampleWithSnippets()
         ]
         sampleData.forEach {
             container.mainContext.insert($0)
@@ -42,21 +42,24 @@ let previewContainer: ModelContainer = {
         let container = try ModelContainer(for: Snippet.self,
                                            ModelConfiguration(inMemory: true))
         
-    
         Task { @MainActor in
             
-            let snip = Snippet.example()
+            let context = container.mainContext
             
-            container.mainContext.insert(object: snip)
-            container.mainContext.insert(object: Folder.exampleWithSnippets())
+            let snip = Snippet.example2()
             
-           // snip.tags.append(Tag.example())
+            context.insert(object: snip)
+            context.insert(object: Snippet.example3())
+            context.insert(object: Snippet.example4())
+            
+            context.insert(object: Folder.exampleWithSnippets())
+            
             let tag = Tag.example()
             tag.snippets.append(snip)
             
             
-            container.mainContext.insert(object: Tag.example2())
-            container.mainContext.insert(object: Tag.example3())
+            context.insert(object: Tag.example2())
+            context.insert(object: Tag.example3())
         }
         
         return container
@@ -64,4 +67,3 @@ let previewContainer: ModelContainer = {
         fatalError("Failed to create container: \(error.localizedDescription)")
     }
 }()
-

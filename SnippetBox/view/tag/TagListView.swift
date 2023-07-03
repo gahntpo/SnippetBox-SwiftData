@@ -52,27 +52,38 @@ struct TagListView: View {
                 .tag(tag)
             }
         }
-            .listStyle(.plain)
-            .frame(minHeight: 150)
-            
-            if selectedTags.count > 0 {
-                Button {
-                    selectedTags.forEach { tag in
-                        snippet.tags.append(tag)
-                    }
-                    dismiss()
-                } label: {
-                    Text("Add keywords to note")
+        .listStyle(.plain)
+        .frame(minHeight: 150)
+        
+        if selectedTags.count > 0 {
+            Button {
+                selectedTags.forEach { tag in
+                    snippet.tags.append(tag)
                 }
-            } else if tags.count == 0 {
-                NewTagView(snippet: snippet,
-                           searchTerm: searchTerm)
+                dismiss()
+            } label: {
+                Text("Add keywords to note")
             }
-    
+        } else if tags.count == 0 {
+            NewTagView(snippet: snippet,
+                       searchTerm: searchTerm)
+        }
+        
     }
 }
 
 #Preview {
+    ModelPreview { snippet in
+        VStack {
+            TagListView(searchTerm: "",
+                        sorting: .aToZ,
+                        selectedTags: .constant([]),
+                        snippet: snippet)
+        }
+    }
+}
+
+#Preview("without search results") {
     ModelPreview { snippet in
         VStack {
             TagListView(searchTerm: "test",
