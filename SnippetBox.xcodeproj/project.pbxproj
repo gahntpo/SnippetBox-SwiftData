@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170EC7A02A53F7DE00FD2B88 /* RelationshipPredicateFolderListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170EC79F2A53F7DE00FD2B88 /* RelationshipPredicateFolderListExample.swift */; };
 		177464DB2A482BC0008702DC /* FolderEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177464DA2A482BC0008702DC /* FolderEditorView.swift */; };
 		177464DD2A4AAEFD008702DC /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177464DC2A4AAEFD008702DC /* PreviewSampleData.swift */; };
 		177464E12A4C0545008702DC /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177464E02A4C0545008702DC /* ModelPreview.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		170EC79F2A53F7DE00FD2B88 /* RelationshipPredicateFolderListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipPredicateFolderListExample.swift; sourceTree = "<group>"; };
 		177464DA2A482BC0008702DC /* FolderEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditorView.swift; sourceTree = "<group>"; };
 		177464DC2A4AAEFD008702DC /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
 		177464E02A4C0545008702DC /* ModelPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPreview.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				17D033ED2A52C290002526F8 /* PropertPredicateSnippetListExample.swift */,
 				17D033F92A52DA9C002526F8 /* MultiPropertPredicateSnippetListExample.swift */,
 				17D033F52A52D424002526F8 /* RelationshipPredicateSnippetListExample.swift */,
+				170EC79F2A53F7DE00FD2B88 /* RelationshipPredicateFolderListExample.swift */,
 				17D033EF2A52C710002526F8 /* DetailedPropertySnippetRow.swift */,
 				17D033F72A52D899002526F8 /* DetailedRelationshipSnippetRow.swift */,
 			);
@@ -514,6 +517,7 @@
 				177464DD2A4AAEFD008702DC /* PreviewSampleData.swift in Sources */,
 				17D033FA2A52DA9C002526F8 /* MultiPropertPredicateSnippetListExample.swift in Sources */,
 				177464DB2A482BC0008702DC /* FolderEditorView.swift in Sources */,
+				170EC7A02A53F7DE00FD2B88 /* RelationshipPredicateFolderListExample.swift in Sources */,
 				17E808C12A430C7200E5CC1B /* ImageSelectorButton.swift in Sources */,
 				17E808B72A42E49C00E5CC1B /* Color+Helper.swift in Sources */,
 				17E5C3502A4C2D2A001F6666 /* UndoButton.swift in Sources */,

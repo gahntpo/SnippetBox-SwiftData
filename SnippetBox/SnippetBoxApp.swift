@@ -17,8 +17,7 @@ struct SnippetBoxApp: App {
                     .tabItem { Label("main", systemImage: "circle") }
                 
                 PropertPredicateSnippetListExample()
-                    .tabItem { Label("query", systemImage: "camera.filters") }
-                
+                    .tabItem { Label("query properties", systemImage: "camera.filters") }
                 
                 RelationshipPredicateSnippetListExample()
                     .tabItem { Label("query relationship", systemImage: "line.3.horizontal.decrease.circle") }

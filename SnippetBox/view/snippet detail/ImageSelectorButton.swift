@@ -24,7 +24,7 @@ struct ImageSelectorButton: View {
             Label("Import photo", systemImage: "photo")
       
         }
-        .onChange(of: selectedItem) { newValue in
+        .onChange(of: selectedItem) { oldValue, newValue in
               Task {
                   do {
                       if let data = try await newValue?.loadTransferable(type: Data.self) {

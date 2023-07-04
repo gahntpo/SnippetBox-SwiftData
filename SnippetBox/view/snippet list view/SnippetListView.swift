@@ -24,7 +24,7 @@ struct SnippetListView: View {
         /*
         
         self._snippets = Query(filter: #Predicate {
-         $0.folder?.id == folder.id
+         $0.folder?.uuid == folder.uuid
          // $0.folder == folder
      }, sort: \.creationDate)
         */

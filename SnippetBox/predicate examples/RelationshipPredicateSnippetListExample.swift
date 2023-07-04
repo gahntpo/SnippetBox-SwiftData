@@ -35,7 +35,7 @@ struct RelationshipPredicateSnippetListExample: View {
     var newFolderSnippets: [Snippet]
     
     /*
-    @Query(filter: #Predicate { ($0.tags_ ?? []).isEmpty},
+    @Query(filter: #Predicate { $0.tags_?.count ?? 0 > 0 },
              sort: [SortDescriptor(\.creationDate)] )
     var tagsSnippets: [Snippet]
     */
@@ -67,6 +67,7 @@ struct RelationshipPredicateSnippetListExample: View {
                 }
             }
              */
+            
         }
     }
 }
