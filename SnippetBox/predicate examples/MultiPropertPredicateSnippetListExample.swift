@@ -10,14 +10,14 @@ import SwiftData
 
 struct MultiPropertPredicateSnippetListExample: View {
     
-    @Query(sort: [SortDescriptor(\.creationDate)] )
+    @Query(sort: [SortDescriptor(\Snippet.creationDate)] )
     var allSnippets: [Snippet]
     
     @Query(filter: #Predicate { $0.isFavorite && $0.language_ == "swift" },
-             sort: [SortDescriptor(\.creationDate)] )
+             sort: [SortDescriptor(\Snippet.creationDate)] )
     var snippets: [Snippet]
     
-    @Query(filter: #Predicate { $0.isFavorite || $0.language_ == "swift" },
+    @Query(filter: #Predicate<Snippet> { $0.isFavorite || $0.language_ == "swift" },
              sort: [SortDescriptor(\.creationDate)] )
     var orSnippets: [Snippet]
     

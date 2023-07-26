@@ -10,7 +10,7 @@ import SwiftData
 
 struct SnippetExampleList: View {
     
-    @Query(sort: [SortDescriptor(\.creationDate)] )
+    @Query(sort: [SortDescriptor(\Snippet.creationDate)] )
     var allSnippets: [Snippet]
     
     var body: some View {

@@ -12,7 +12,7 @@ struct FolderListView: View {
     
     @Environment(\.modelContext) private var context
 
-    @Query(sort: \.creationDate, order: .forward)
+    @Query(sort: \Folder.creationDate, order: .forward)
     var folders: [Folder]
 
     @Binding var selectedFolder: Folder?
@@ -44,7 +44,7 @@ struct FolderListView: View {
     private func addFolder() {
         withAnimation {
             let folder = Folder(name: "new folder")
-            context.insert(object: folder)
+            context.insert(folder)
             selectedFolder = folder
         }
     }

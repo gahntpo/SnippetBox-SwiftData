@@ -12,7 +12,7 @@ struct SnippetListView: View {
     
     let folder: Folder
     
-    @Query(sort: \.creationDate, order: .reverse)
+    @Query(sort: \Snippet.creationDate, order: .reverse)
     var snippets: [Snippet]
     
     @Binding var selectedSnippet: Snippet?
@@ -73,7 +73,7 @@ struct SnippetListView: View {
 }
 
 private struct PreviewSnippetListView: View {
-    @Query(sort: \.creationDate, order: .forward)
+    @Query(sort: \Folder.creationDate, order: .forward)
     private var folders: [Folder]
     
     var body: some View {

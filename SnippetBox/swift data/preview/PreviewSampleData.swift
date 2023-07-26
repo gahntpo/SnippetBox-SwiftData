@@ -48,18 +48,18 @@ let previewContainer: ModelContainer = {
             
             let snip = Snippet.example2()
             
-            context.insert(object: snip)
-            context.insert(object: Snippet.example3())
-            context.insert(object: Snippet.example4())
+            context.insert(snip)
+            context.insert(Snippet.example3())
+            context.insert(Snippet.example4())
             
-            context.insert(object: Folder.exampleWithSnippets())
+            context.insert(Folder.exampleWithSnippets())
             
             let tag = Tag.example()
             tag.snippets.append(snip)
             
             
-            context.insert(object: Tag.example2())
-            context.insert(object: Tag.example3())
+            context.insert(Tag.example2())
+            context.insert(Tag.example3())
         }
         
         return container

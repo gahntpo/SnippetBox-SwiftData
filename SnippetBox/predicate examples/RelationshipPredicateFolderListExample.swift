@@ -10,7 +10,7 @@ import SwiftData
 
 struct RelationshipPredicateFolderListExample: View {
     
-    @Query(sort: \.name) var allFolders: [Folder]
+    @Query(sort: \Folder.name) var allFolders: [Folder]
     
     /*
     @Query(filter: #Predicate { $0.snippets.count > 0  },

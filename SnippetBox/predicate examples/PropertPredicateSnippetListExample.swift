@@ -10,27 +10,27 @@ import SwiftData
 
 struct PropertPredicateSnippetListExample: View {
     
-    @Query(sort: [SortDescriptor(\.creationDate)] )
+    @Query(sort: [SortDescriptor(\Snippet.creationDate)] )
     var allSnippets: [Snippet]
     
-    @Query(filter: #Predicate { $0.isFavorite },
+    @Query(filter: #Predicate<Snippet>  { $0.isFavorite },
              sort: [SortDescriptor(\.creationDate)] )
     var snippets: [Snippet]
 
-    @Query(filter: #Predicate { $0.language_ == "swift" },
-             sort: [SortDescriptor(\.creationDate)] )
+    @Query(filter: #Predicate<Snippet> { $0.language_ == "swift" },
+             sort: [SortDescriptor(\Snippet.creationDate)] )
     var swiftSnippets: [Snippet]
     
-    @Query(filter: #Predicate { $0.title.contains("test") },
-             sort: [SortDescriptor(\.creationDate)] )
+    @Query(filter: #Predicate<Snippet> { $0.title.contains("test") },
+             sort: [SortDescriptor(\Snippet.creationDate)] )
     var searchTermSnippets: [Snippet]
 
-    @Query(filter: #Predicate { $0.code.count > 0 },
-             sort: [SortDescriptor(\.creationDate)] )
+    @Query(filter: #Predicate<Snippet>  { $0.code.count > 0 },
+             sort: [SortDescriptor(\Snippet.creationDate)] )
     var longCodeSnippets: [Snippet]
     
-    @Query(filter: #Predicate { $0.image != nil },
-             sort: [SortDescriptor(\.creationDate)] )
+    @Query(filter: #Predicate<Snippet>  { $0.image != nil },
+             sort: [SortDescriptor(\Snippet.creationDate)] )
     var imageSnippets: [Snippet]
     
     lazy var startOfDay: Date = {
@@ -38,7 +38,7 @@ struct PropertPredicateSnippetListExample: View {
         return now.startOfDay
     }()
     
-    @Query(sort: [SortDescriptor(\.creationDate)] )
+    @Query(sort: [SortDescriptor(\Snippet.creationDate)] )
     var oldSnippets: [Snippet]
     
     init() {

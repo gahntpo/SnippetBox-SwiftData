@@ -16,11 +16,11 @@ import SwiftUI
 import SwiftData
 
 struct RelationshipPredicateSnippetListExample: View {
-    @Query(sort: [SortDescriptor(\.creationDate)] )
+    @Query(sort: [SortDescriptor(\Snippet.creationDate)] )
     var allSnippets: [Snippet]
     
     
-    @Query(filter: #Predicate { $0.folder?.name.count ?? 0 > 20},
+    @Query(filter: #Predicate<Snippet> { $0.folder?.name.count ?? 0 > 20},
              sort: [SortDescriptor(\.creationDate)] )
     var folderNameSnippets: [Snippet]
     
@@ -30,7 +30,7 @@ struct RelationshipPredicateSnippetListExample: View {
     var nofolderSnippets: [Snippet]
     */
     
-    @Query(filter: #Predicate { $0.folder?.name == "new folder" },
+    @Query(filter: #Predicate<Snippet> { $0.folder?.name == "new folder" },
              sort: [SortDescriptor(\.creationDate)] )
     var newFolderSnippets: [Snippet]
     

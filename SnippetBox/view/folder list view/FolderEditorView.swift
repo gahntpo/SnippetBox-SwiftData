@@ -48,7 +48,7 @@ struct FolderEditorView: View {
 }
 
 private struct PreviewFolderEditorView: View {
-    @Query(sort: \.creationDate, order: .forward)
+    @Query(sort: \Folder.creationDate, order: .forward)
     private var folders: [Folder]
     var body: some View {
         FolderEditorView(folder: folders[0])
