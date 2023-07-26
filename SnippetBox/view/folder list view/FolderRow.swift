@@ -23,7 +23,7 @@ struct FolderRow: View {
         HStack {
 #if os(iOS)
             Label(folder.name, systemImage: "folder")
-            Spacer()
+                .badge(folder.snippets.count)
             
 #else
             Image(systemName: "folder")
@@ -31,10 +31,11 @@ struct FolderRow: View {
                 //.foregroundStyle(folderColor)
             TextField("name", text: $folder.name)
                 .focused($textFieldIsSelected)
-#endif
             Spacer()
             Text("\(folder.snippets.count)")
                 .foregroundColor(.secondary)
+#endif
+
         }
         .swipeActions {
             

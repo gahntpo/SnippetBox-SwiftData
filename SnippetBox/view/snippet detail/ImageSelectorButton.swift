@@ -10,7 +10,6 @@ import PhotosUI
 
 struct ImageSelectorButton: View {
     
-    
     @Environment(\.modelContext) private var context
     var snippet: Snippet
     @State private var selectedItem: PhotosPickerItem? = nil

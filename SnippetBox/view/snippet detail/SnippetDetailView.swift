@@ -46,8 +46,7 @@ struct SnippetDetailView: View {
                 CodeEditor(source: $snippet.code,
                            language: snippet.language,
                            theme: .pojoaque)
-                .shadow(radius: 5)
-                
+              
                 Button {
                     UIPasteboard.general.copyText(snippet.code)
                 } label: {
@@ -57,12 +56,12 @@ struct SnippetDetailView: View {
                 .labelStyle(.iconOnly)
                 .padding(5)
             }
-           
+            .shadow(radius: 5)
             .padding(.bottom)
 
             
            HStack(alignment: .firstTextBaseline) {
-                Text("Your Tags:")
+                Text("Tags:")
                     .underline()
                 
                 FlowLayout(alignment: .leading) {
@@ -104,7 +103,9 @@ struct SnippetDetailView: View {
             }
             
            ImageSelectorButton(snippet: snippet)
+                .padding(.top)
             SnippetImageView(snippet: snippet)
+              
            
         }
         .padding()
@@ -128,7 +129,6 @@ struct SnippetDetailView: View {
                 } label: {
                     Label("Delete", systemImage: "trash")
                 }
-                .foregroundColor(.pink)
 
             }
         }
