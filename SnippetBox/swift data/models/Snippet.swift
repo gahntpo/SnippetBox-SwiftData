@@ -33,14 +33,10 @@ import CodeEditor
     var title: String
     
     var folder: Folder?     // to-one relationships is always optional
-    
-    @Relationship( inverse: \Tag.snippets_)
-    var tags_: [Tag]? = nil // relationships only works with optional
-    
-    var tags: [Tag] {
-        get { self.tags_ ?? [] }
-        set { self.tags_ = newValue  }
-    }
+  
+    @Relationship(inverse: \Tag.snippets)
+    var tags: [Tag] // relationships only works with optional
+ 
     
     var language_: String?
     
@@ -67,7 +63,7 @@ import CodeEditor
         notes: String = "",
         title: String = "",
         folder: Folder? = nil,
-        tags_: [Tag] = [],
+        tags: [Tag] = [],
         creationDate: Date = Date()
     ) {
         self.creationDate = creationDate
@@ -85,7 +81,7 @@ import CodeEditor
     }
     
     static func delete(_ snippet: Snippet) {
-        if let context = snippet.context {
+        if let context = snippet.modelContext {
             context.delete(snippet)
             //try? context.save() // suggested fix
         }

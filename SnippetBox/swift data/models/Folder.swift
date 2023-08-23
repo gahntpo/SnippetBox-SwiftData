@@ -22,7 +22,7 @@ import SwiftData
     var uuid: UUID
     
     // array - but data is not keeping sort order
-    @Relationship(.cascade, inverse: \Snippet.folder) var snippets_: [Snippet]?
+    @Relationship(deleteRule: .cascade, inverse: \Snippet.folder) var snippets_: [Snippet]?
     
     var snippets: [Snippet] {
         get { self.snippets_ ?? [] }
@@ -41,24 +41,13 @@ import SwiftData
     }
 
     static func delete(_ folder: Folder) {
-        if let context = folder.context {
+        if let context = folder.modelContext {
             context.delete(folder)
         }
     }
     
-    static var exampleContext: ModelContext = {
-        let schema = Schema([Folder.self, Snippet.self, Tag.self])
-        let configuration = ModelConfiguration(inMemory: true)
-        let container = try! ModelContainer(for: schema, configurations: [configuration])
-        return ModelContext(container)
-    }()
-    
     static func example() -> Folder {
-        let folder = Folder(name: "test folder")
-       let context = Folder.exampleContext
-        context.insert(folder)
-        
-        return folder
+        return Folder(name: "test folder")
     }
     
     static func exampleWithSnippets() -> Folder {

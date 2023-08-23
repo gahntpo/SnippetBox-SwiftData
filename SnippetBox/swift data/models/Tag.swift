@@ -20,12 +20,14 @@ import SwiftData
     @Attribute(originalName: "name_")
     var name: String
     
-    var snippets_: [Snippet]?
     
+    var snippets: [Snippet]
+    /*
     var snippets: [Snippet] {
         get { self.snippets_ ?? [] }
         set { self.snippets_ = newValue  }
     }
+     */
     
     var color_: String?
     
@@ -54,16 +56,14 @@ import SwiftData
         self.uuid = UUID()
         self.color_ = color_
         self.name = name
-        self.snippets = snippets
+         self.snippets = snippets
     }
     
     static func delete(_ tag: Tag) {
-        if let context = tag.context {
+        if let context = tag.modelContext {
             context.delete(tag)
         }
     }
-    
-
     
     static func example() -> Tag {
         Tag(color_: "000000", name: "My tag")

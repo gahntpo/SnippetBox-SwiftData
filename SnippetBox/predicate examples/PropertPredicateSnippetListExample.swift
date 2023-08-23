@@ -10,6 +10,8 @@ import SwiftData
 
 struct PropertPredicateSnippetListExample: View {
     
+    @Environment(\.calendar) var calendar
+    
     @Query(sort: [SortDescriptor(\Snippet.creationDate)] )
     var allSnippets: [Snippet]
     
@@ -47,7 +49,7 @@ struct PropertPredicateSnippetListExample: View {
         
         // known issue: predicate does not work with Date type
         self._oldSnippets = Query(filter: #Predicate {
-            $0.creationDate < now
+            $0.creationDate < startOfDay
         }, sort: [SortDescriptor(\.creationDate)])
     }
     

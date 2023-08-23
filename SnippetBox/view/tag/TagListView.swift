@@ -27,9 +27,10 @@ struct TagListView: View {
         self.snippet = snippet
         self.searchTerm = searchTerm
     
-        //MARK: - no longer works with Xcode 15 beta 5
+        //MARK: - fixed with Xcode 15 beta 7
+        //update query works without crashing the app
         //@Query changed from propery wrapper to swift macro
-        /*
+        
         if searchTerm.count > 0 {
             self._tags = Query(filter: #Predicate<Tag> {
                 $0.name.contains(searchTerm)
@@ -38,7 +39,6 @@ struct TagListView: View {
         } else {
             self._tags = Query(sort: [sorting.sortDescriptor])
         }
-         */
     }
     
     var body: some View {

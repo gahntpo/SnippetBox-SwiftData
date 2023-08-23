@@ -15,7 +15,7 @@ actor PreviewSampleData {
     @MainActor
     static var container: ModelContainer = {
         let schema = Schema([Folder.self, Snippet.self, Tag.self])
-        let configuration = ModelConfiguration(inMemory: true)
+        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try! ModelContainer(for: schema, configurations: [configuration])
         let sampleData: [any PersistentModel] = [
             Snippet.example2(), Folder.exampleWithSnippets()
@@ -30,7 +30,7 @@ actor PreviewSampleData {
     @MainActor
     static var emptyTestContext: ModelContext = {
         let schema = Schema([Folder.self, Snippet.self, Tag.self])
-        let configuration = ModelConfiguration(inMemory: true)
+        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try! ModelContainer(for: schema, configurations: [configuration])
         return container.mainContext
     }()
@@ -40,7 +40,7 @@ actor PreviewSampleData {
 let previewContainer: ModelContainer = {
     do {
         let container = try ModelContainer(for: Snippet.self,
-                                           ModelConfiguration(inMemory: true))
+                                           configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         
         Task { @MainActor in
             
