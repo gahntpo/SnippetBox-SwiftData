@@ -60,6 +60,13 @@ let previewContainer: ModelContainer = {
             
             context.insert(Tag.example2())
             context.insert(Tag.example3())
+            
+            let folder = Folder(name: "new folder")
+            context.insert(folder)
+            folder.snippets.append(Snippet(isFavorite: true, title: "snippet in new folder"))
+            
+            let emptyFolder = Folder(name: "empty folder")
+            context.insert(emptyFolder)
         }
         
         return container

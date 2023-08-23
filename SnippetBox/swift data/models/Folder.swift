@@ -22,13 +22,8 @@ import SwiftData
     var uuid: UUID
     
     // array - but data is not keeping sort order
-    @Relationship(deleteRule: .cascade, inverse: \Snippet.folder) var snippets_: [Snippet]?
-    
-    var snippets: [Snippet] {
-        get { self.snippets_ ?? [] }
-        set { self.snippets_ = newValue  }
-    }
-    
+    @Relationship(deleteRule: .cascade, inverse: \Snippet.folder) var snippets: [Snippet]
+  
     //MARK: - Init
     
     init(name: String = "",

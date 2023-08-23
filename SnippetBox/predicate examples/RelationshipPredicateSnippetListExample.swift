@@ -19,26 +19,19 @@ struct RelationshipPredicateSnippetListExample: View {
     @Query(sort: [SortDescriptor(\Snippet.creationDate)] )
     var allSnippets: [Snippet]
     
-    
-    @Query(filter: #Predicate<Snippet> { $0.folder?.name.count ?? 0 > 20},
-             sort: [SortDescriptor(\.creationDate)] )
-    var folderNameSnippets: [Snippet]
-    
-    /*
-    @Query(filter: #Predicate { $0.folder == nil },
+    @Query(filter: #Predicate<Snippet> { $0.folder == nil },
              sort: [SortDescriptor(\.creationDate)] )
     var nofolderSnippets: [Snippet]
-    */
     
     @Query(filter: #Predicate<Snippet> { $0.folder?.name == "new folder" },
              sort: [SortDescriptor(\.creationDate)] )
     var newFolderSnippets: [Snippet]
     
-    /*
-    @Query(filter: #Predicate { $0.tags_?.count ?? 0 > 0 },
+    
+    @Query(filter: #Predicate<Snippet> { !$0.tags.isEmpty },
              sort: [SortDescriptor(\.creationDate)] )
     var tagsSnippets: [Snippet]
-    */
+    
     
     var body: some View {
         List {
@@ -48,26 +41,23 @@ struct RelationshipPredicateSnippetListExample: View {
                 }
             }
             
-            Section("Snippets with folder name exist") {
-                ForEach(folderNameSnippets){ snippet in
+            Section("Snippets without folder") {
+                ForEach(nofolderSnippets){ snippet in
                     DetailedRelationshipSnippetRow(snippet: snippet)
                 }
             }
             
-            Section("Snippets in ´new folder´") {
+            Section("Snippets in folder with name ´new folder´") {
                 ForEach(newFolderSnippets){ snippet in
                     DetailedRelationshipSnippetRow(snippet: snippet)
                 }
             }
             
-            /*
             Section("Snippets with tags") {
                 ForEach(tagsSnippets){ snippet in
-             DetailedRelationshipSnippetRow(snippet: snippet)
+                    DetailedRelationshipSnippetRow(snippet: snippet)
                 }
             }
-             */
-            
         }
     }
 }

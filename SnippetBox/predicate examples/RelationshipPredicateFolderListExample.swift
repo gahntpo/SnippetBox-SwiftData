@@ -12,27 +12,29 @@ struct RelationshipPredicateFolderListExample: View {
     
     @Query(sort: \Folder.name) var allFolders: [Folder]
     
-    /*
-    @Query(filter: #Predicate { $0.snippets.count > 0  },
-           sort: [SortDescriptor(\.creationDate)] )
+    
+    @Query(filter: #Predicate<Folder> { $0.snippets.count > 0  },
+           sort: [SortDescriptor(\Folder.creationDate)] )
     var snippetFolders: [Folder]
     
-    @Query(filter: #Predicate {
+     
+    @Query(filter: #Predicate<Folder> {
         $0.snippets.contains {
             $0.isFavorite
         }
     },
-        sort: [SortDescriptor(\.creationDate)] )
+        sort: [SortDescriptor(\Folder.creationDate)] )
     var someFavoriteSnippetFolders: [Folder]
     
-    @Query(filter: #Predicate {
+    // Not Working 
+    @Query(filter: #Predicate<Folder> {
         $0.snippets.allSatisfy {
             $0.isFavorite
         }
     },
-        sort: [SortDescriptor(\.creationDate)] )
+        sort: [SortDescriptor(\Folder.creationDate)] )
     var allFavoriteSnippetFolders: [Folder]
-    */
+    
     
     var body: some View {
         List {
@@ -40,9 +42,15 @@ struct RelationshipPredicateFolderListExample: View {
                 ForEach(allFolders){ folder in
                     Label(folder.name, systemImage: "folder")
                         .badge(folder.snippets.count)
+                    
+                    ForEach(folder.snippets) {
+                        SnippetRow(snippet: $0)
+                            .padding(.leading)
+                            .border(Color.gray)
+                    }
                 }
             }
-            /*
+            
             Section("folders with snippets") {
                 ForEach(snippetFolders){ folder in
                     Label(folder.name, systemImage: "folder")
@@ -61,11 +69,12 @@ struct RelationshipPredicateFolderListExample: View {
                     Text(folder.name)
                 }
             }
-             */
+             
         }
     }
 }
 
 #Preview {
     RelationshipPredicateFolderListExample()
+        .modelContainer(previewContainer)
 }
