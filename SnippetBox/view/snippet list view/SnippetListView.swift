@@ -18,16 +18,13 @@ struct SnippetListView: View {
     @Binding var selectedSnippet: Snippet?
     
     init(for folder: Folder, selectedSnippet: Binding<Snippet?>) {
-      
-        // does not work, uuid not supported with Xcode 15 beta 2
-        // #Predicate does not support UUID, Date, and URL properties. (109539652)
-        /*
+
+        let id = folder.uuid  // workaround: optional fetch 
         
         self._snippets = Query(filter: #Predicate {
-         $0.folder?.uuid == folder.uuid
-         // $0.folder == folder
-     }, sort: \.creationDate)
-        */
+            $0.folder?.uuid == id
+        }, sort: \.creationDate)
+   
         
         self.folder = folder
         self._selectedSnippet = selectedSnippet
@@ -36,8 +33,7 @@ struct SnippetListView: View {
     var body: some View {
         
         List(selection: $selectedSnippet) {
-            ForEach(folder.snippets.sorted()) { snippet in
-           // ForEach(snippets) { snippet in
+           ForEach(snippets) { snippet in
                 SnippetRow(snippet: snippet)
                 .tag(snippet)
                 .swipeActions {
@@ -91,3 +87,6 @@ struct SnippetListView_Previews: PreviewProvider {
             .modelContainer(PreviewSampleData.container)
     }
 }
+
+
+

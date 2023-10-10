@@ -12,7 +12,7 @@ struct TagListView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    @Query(sort: \Tag.name, order: .forward)
+    @Query(sort: \Tag.name, order: .forward, animation: .easeInOut)
     var tags: [Tag]
     
     @Binding var selectedTags: Set<Tag>
@@ -34,10 +34,10 @@ struct TagListView: View {
         if searchTerm.count > 0 {
             self._tags = Query(filter: #Predicate<Tag> {
                 $0.name.contains(searchTerm)
-            }, sort: [sorting.sortDescriptor])
+            }, sort: [sorting.sortDescriptor], animation: .easeInOut)
             
         } else {
-            self._tags = Query(sort: [sorting.sortDescriptor])
+            self._tags = Query(sort: [sorting.sortDescriptor], animation: .easeInOut)
         }
     }
     

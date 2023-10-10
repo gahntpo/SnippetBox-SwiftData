@@ -31,10 +31,11 @@ struct AddTagToSnippetsView: View {
              #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
-            .searchable(text: $searchTerm, placement: .navigationBarDrawer(displayMode: .always))
+            .searchable(text: $searchTerm,
+                        placement: .navigationBarDrawer(displayMode: .always))
             .toolbar(content: {
                 Menu {
-                    Picker(selection: $tagSorting) {
+                    Picker(selection: $tagSorting.animation()) {
                         ForEach(TagSorting.allCases) { tag in
                             Text(tag.title)
                         }

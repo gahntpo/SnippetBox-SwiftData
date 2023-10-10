@@ -19,15 +19,18 @@ struct PropertPredicateSnippetListExample: View {
              sort: [SortDescriptor(\.creationDate)] )
     var snippets: [Snippet]
 
-    @Query(filter: #Predicate<Snippet> { $0.language_ == "swift" },
-             sort: [SortDescriptor(\Snippet.creationDate)] )
-    var swiftSnippets: [Snippet]
+   // @Query(filter: #Predicate<Snippet> { $0.codingLanguageData == CodingLanguage.swift },
+    //@Query(filter: #Predicate<Snippet> { $0.codingLanguageData.rawValue == 0 },
+   // @Query(filter: #Predicate<Snippet> { $0.codingLanguageData.title == "swift" },
+    //         sort: [SortDescriptor(\Snippet.creationDate)] )
+    // var swiftSnippets: [Snippet]
     
-    @Query(filter: #Predicate<Snippet> { $0.title.contains("test") },
+    
+    @Query(filter: #Predicate<Snippet> { $0.title.contains("test") },  // case insensitive? localizedCaseInsensitiveContains
              sort: [SortDescriptor(\Snippet.creationDate)] )
     var searchTermSnippets: [Snippet]
 
-    @Query(filter: #Predicate<Snippet>  { $0.code.count > 0 },
+    @Query(filter: #Predicate<Snippet>  { $0.code.count > 0 }, // !$0.code.isEmpty
              sort: [SortDescriptor(\Snippet.creationDate)] )
     var longCodeSnippets: [Snippet]
     
@@ -67,13 +70,15 @@ struct PropertPredicateSnippetListExample: View {
                 }
             }
             
+            /*
             Section("Swift Snippets") {
                 ForEach(swiftSnippets){ snippet in
                     DetailedPropertySnippetRow(snippet: snippet)
                 }
             }
+            */
             
-            Section("search for test in Snippet title:") {
+            Section("search for `test in Snippet title:") {
                 ForEach(searchTermSnippets){ snippet in
                     DetailedPropertySnippetRow(snippet: snippet)
                 }

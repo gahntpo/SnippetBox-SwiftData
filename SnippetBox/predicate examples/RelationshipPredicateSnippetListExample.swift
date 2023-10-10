@@ -20,18 +20,22 @@ struct RelationshipPredicateSnippetListExample: View {
     var allSnippets: [Snippet]
     
     @Query(filter: #Predicate<Snippet> { $0.folder == nil },
-             sort: [SortDescriptor(\.creationDate)] )
+             sort: [SortDescriptor(\Snippet.creationDate)] )
     var nofolderSnippets: [Snippet]
     
-    @Query(filter: #Predicate<Snippet> { $0.folder?.name == "new folder" },
-             sort: [SortDescriptor(\.creationDate)] )
+    //@Query(filter: #Predicate<Snippet> { $0.folder?.name == "new folder" },
+    @Query(filter: #Predicate<Snippet> {
+        $0.folder?.name.contains("new folder") == true
+    },sort: [SortDescriptor(\.creationDate)] )
     var newFolderSnippets: [Snippet]
-    
     
     @Query(filter: #Predicate<Snippet> { !$0.tags.isEmpty },
              sort: [SortDescriptor(\.creationDate)] )
     var tagsSnippets: [Snippet]
     
+    @Query(filter: #Predicate<Snippet> { $0.tags.count > 2 },
+             sort: [SortDescriptor(\.creationDate)] )
+    var tagsThreeSnippets: [Snippet]
     
     var body: some View {
         List {
@@ -58,6 +62,13 @@ struct RelationshipPredicateSnippetListExample: View {
                     DetailedRelationshipSnippetRow(snippet: snippet)
                 }
             }
+            
+            Section("Snippets with more than 2 tags") {
+                ForEach(tagsThreeSnippets){ snippet in
+                    DetailedRelationshipSnippetRow(snippet: snippet)
+                }
+            }
+ 
         }
     }
 }
@@ -68,3 +79,5 @@ struct RelationshipPredicateSnippetListExample: View {
     RelationshipPredicateSnippetListExample()
         .modelContainer(previewContainer)
 }
+
+

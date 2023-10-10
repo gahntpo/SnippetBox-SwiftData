@@ -52,7 +52,10 @@ let previewContainer: ModelContainer = {
             context.insert(Snippet.example3())
             context.insert(Snippet.example4())
             
-            context.insert(Folder.exampleWithSnippets())
+            let fav = Snippet(isFavorite: true, title: "another favorite snippet")
+            let folderOne = Folder.exampleWithSnippets()
+            context.insert(folderOne)
+            folderOne.snippets.append(fav)
             
             let tag = Tag.example()
             tag.snippets.append(snip)
@@ -61,9 +64,9 @@ let previewContainer: ModelContainer = {
             context.insert(Tag.example2())
             context.insert(Tag.example3())
             
-            let folder = Folder(name: "new folder")
+            let folder = Folder(name: "folder with favorite snippet")
             context.insert(folder)
-            folder.snippets.append(Snippet(isFavorite: true, title: "snippet in new folder"))
+            folder.snippets.append(Snippet(isFavorite: true, title: "favorite snippet"))
             
             let emptyFolder = Folder(name: "empty folder")
             context.insert(emptyFolder)

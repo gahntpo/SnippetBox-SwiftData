@@ -22,7 +22,8 @@ struct SnippetBoxApp: App {
                 RelationshipPredicateSnippetListExample()
                     .tabItem { Label("query relationship", systemImage: "line.3.horizontal.decrease.circle") }
             }
-            .modelContainer(for: Snippet.self, isUndoEnabled: true)
+            //.modelContainer(for: Snippet.self, isUndoEnabled: true) // crashes when using custom type codable like enum
+            .modelContainer(for: Snippet.self)
         }
     }
 }

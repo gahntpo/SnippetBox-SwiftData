@@ -27,14 +27,12 @@ struct SnippetDetailView: View {
             }
             
             HStack {
-                 
-                Picker("Language", selection: $snippet.language) {
-                    ForEach(CodeEditor.availableLanguages) { language in
-                        Text("\(language.rawValue.capitalized)")
+                Picker("Language", selection: $snippet.codingLanguageData) {
+                    ForEach(CodingLanguage.allCases) { language in
+                        Text("\(language.title)")
                             .tag(language)
                     }
                 }
-                .fixedSize()
                 
                 Spacer()
                 
@@ -44,7 +42,7 @@ struct SnippetDetailView: View {
             
             ZStack(alignment: .topTrailing) {
                 CodeEditor(source: $snippet.code,
-                           language: snippet.language,
+                           language: .swift,
                            theme: .pojoaque)
               
                 Button {

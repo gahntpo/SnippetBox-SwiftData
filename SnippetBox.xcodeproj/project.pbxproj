@@ -26,6 +26,8 @@
 		17D033F62A52D424002526F8 /* RelationshipPredicateSnippetListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D033F52A52D424002526F8 /* RelationshipPredicateSnippetListExample.swift */; };
 		17D033F82A52D899002526F8 /* DetailedRelationshipSnippetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D033F72A52D899002526F8 /* DetailedRelationshipSnippetRow.swift */; };
 		17D033FA2A52DA9C002526F8 /* MultiPropertPredicateSnippetListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D033F92A52DA9C002526F8 /* MultiPropertPredicateSnippetListExample.swift */; };
+		17D544682AD54E7F007AAF12 /* CodingLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D544672AD54E7F007AAF12 /* CodingLanguage.swift */; };
+		17D5446A2AD54E96007AAF12 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D544692AD54E96007AAF12 /* ColorData.swift */; };
 		17E5C3502A4C2D2A001F6666 /* UndoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5C34F2A4C2D2A001F6666 /* UndoButton.swift */; };
 		17E61EA02A4710AE008F29BD /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E61E9F2A4710AE008F29BD /* TagListView.swift */; };
 		17E808772A42DE2D00E5CC1B /* SnippetBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E808762A42DE2D00E5CC1B /* SnippetBoxApp.swift */; };
@@ -87,6 +89,8 @@
 		17D033F52A52D424002526F8 /* RelationshipPredicateSnippetListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipPredicateSnippetListExample.swift; sourceTree = "<group>"; };
 		17D033F72A52D899002526F8 /* DetailedRelationshipSnippetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRelationshipSnippetRow.swift; sourceTree = "<group>"; };
 		17D033F92A52DA9C002526F8 /* MultiPropertPredicateSnippetListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPropertPredicateSnippetListExample.swift; sourceTree = "<group>"; };
+		17D544672AD54E7F007AAF12 /* CodingLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingLanguage.swift; sourceTree = "<group>"; };
+		17D544692AD54E96007AAF12 /* ColorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorData.swift; sourceTree = "<group>"; };
 		17E5C34F2A4C2D2A001F6666 /* UndoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoButton.swift; sourceTree = "<group>"; };
 		17E61E9F2A4710AE008F29BD /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		17E808732A42DE2D00E5CC1B /* SnippetBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,7 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				1782D6362A4573FD008B99A2 /* Snippet.swift */,
+				17D544672AD54E7F007AAF12 /* CodingLanguage.swift */,
 				1782D6372A4573FD008B99A2 /* Tag.swift */,
+				17D544692AD54E96007AAF12 /* ColorData.swift */,
 				17808C1E2A45879600B33D30 /* Folder.swift */,
 			);
 			path = models;
@@ -505,6 +511,7 @@
 				17D033EE2A52C290002526F8 /* PropertPredicateSnippetListExample.swift in Sources */,
 				17D033F42A52CCE4002526F8 /* SnippetExampleList.swift in Sources */,
 				17E808CB2A43221400E5CC1B /* iOS.swift in Sources */,
+				17D5446A2AD54E96007AAF12 /* ColorData.swift in Sources */,
 				17E61EA02A4710AE008F29BD /* TagListView.swift in Sources */,
 				17E808772A42DE2D00E5CC1B /* SnippetBoxApp.swift in Sources */,
 				1782D63A2A4573FD008B99A2 /* Tag.swift in Sources */,
@@ -521,6 +528,7 @@
 				17E808C12A430C7200E5CC1B /* ImageSelectorButton.swift in Sources */,
 				17E808B72A42E49C00E5CC1B /* Color+Helper.swift in Sources */,
 				17E5C3502A4C2D2A001F6666 /* UndoButton.swift in Sources */,
+				17D544682AD54E7F007AAF12 /* CodingLanguage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

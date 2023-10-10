@@ -16,17 +16,18 @@ struct DetailedRelationshipSnippetRow: View {
             
             if let folder = snippet.folder  {
                 Label(folder.name, systemImage: "folder")
+                    .padding(.leading)
             }
             
             if snippet.tags.count > 0 {
                 HStack(alignment: .firstTextBaseline) {
                     Text("Tags:")
                     
-                    
                     ForEach(snippet.tags) { tag in
                         TagCell(tag: tag)
                     }
                 }
+                .padding(.leading)
             }
         }
     }

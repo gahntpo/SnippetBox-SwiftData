@@ -36,30 +36,16 @@ import CodeEditor
   
     @Relationship(inverse: \Tag.snippets)
     var tags: [Tag] // relationships only works with optional
- 
     
-    var language_: String?
-    
-    //var codingLanguage: CodeEditor.Language = .swift
-    
-    var language: CodeEditor.Language {
-        get {
-            if let language_ = language_ {
-               return CodeEditor.Language.init(rawValue: language_)
-            } else {
-                return .swift
-            }
-        }
-        set { self.language_ = newValue.rawValue  }
-    }
-    
+    var codingLanguageData: CodingLanguage
+
     //MARK: - Init
     
     init(
         code: String = "",
         image: Data? = nil,
         isFavorite: Bool = false,
-        language_: String? = CodeEditor.Language.swift.rawValue,
+        language: CodingLanguage = .swift,
         notes: String = "",
         title: String = "",
         folder: Folder? = nil,
@@ -71,13 +57,12 @@ import CodeEditor
         self.image = image
         self.code = code
         self.isFavorite = isFavorite
-        self.language_ = language_
+        self.codingLanguageData = language
         self.notes = notes
         self.title = title
         
         self.folder = folder
         self.tags = tags
-       // self.codingLanguage = CodeEditor.Language.swift
     }
     
     static func delete(_ snippet: Snippet) {
@@ -114,7 +99,7 @@ import CodeEditor
     
     static func example() -> Snippet {
         let snippet = Snippet(title: "My test snippet")
-        snippet.language_ = CodeEditor.Language.swift.rawValue
+        snippet.codingLanguageData = .swift
         snippet.code = """
                    List {
                    ForEach(items) { item in
@@ -138,7 +123,7 @@ import CodeEditor
     
     static func example2() -> Snippet {
         let snippet = Snippet(title: "My favorite snippet")
-        snippet.language_ = CodeEditor.Language.http.rawValue
+        snippet.codingLanguageData = .typescript
         snippet.isFavorite = true
         return snippet
     }
@@ -146,14 +131,14 @@ import CodeEditor
     
     static func example3() -> Snippet {
         let snippet = Snippet(title: "Old snippet", creationDate: Date() - 1000)
-        snippet.language_ = CodeEditor.Language.swift.rawValue
+        snippet.codingLanguageData = .objectivec
         snippet.isFavorite = true
         return snippet
     }
     
     static func example4() -> Snippet {
         let snippet = Snippet(title: "snippet from yesterday", creationDate: Date() - 100000)
-        snippet.language_ = CodeEditor.Language.http.rawValue
+        snippet.codingLanguageData = .pyton
         return snippet
     }
 }
@@ -165,29 +150,5 @@ extension Snippet: Comparable {
 }
 
 
-enum CodingLanguage: Int, Codable, CaseIterable, Identifiable {
-    case swift = 0
-    case objectivec
-    case pyton
-    case css
-    case typescript
-    
-    var id: Self { return self }
-    
-    var title: String {
-        switch self {
-            case .swift:
-                return "swift"
-            case .objectivec:
-                return "objective-c"
-            case .pyton:
-                return "python"
-            case .css:
-                return "css"
-            case .typescript:
-                return "typescript"
-        }
-    }
-}
 
 

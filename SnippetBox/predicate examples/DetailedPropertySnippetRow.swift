@@ -30,7 +30,7 @@ struct DetailedPropertySnippetRow: View {
                 Spacer()
                 
                 
-                Text(snippet.language.rawValue)
+                Text(snippet.codingLanguageData.title)
                     .textCase(.uppercase)
                     .bold()
                 

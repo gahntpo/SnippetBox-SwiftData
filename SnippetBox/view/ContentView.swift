@@ -33,10 +33,8 @@ struct ContentView: View {
 }
 
 #Preview {
-    MainActor.assumeIsolated {
-        ContentView()
-            .modelContainer(PreviewSampleData.container)
-    }
+    ContentView()
+        .modelContainer(previewContainer)
 }
 
 /*

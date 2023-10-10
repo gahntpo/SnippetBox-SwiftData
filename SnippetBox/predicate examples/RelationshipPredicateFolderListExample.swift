@@ -13,7 +13,7 @@ struct RelationshipPredicateFolderListExample: View {
     @Query(sort: \Folder.name) var allFolders: [Folder]
     
     
-    @Query(filter: #Predicate<Folder> { $0.snippets.count > 0  },
+    @Query(filter: #Predicate<Folder> { !$0.snippets.isEmpty  },
            sort: [SortDescriptor(\Folder.creationDate)] )
     var snippetFolders: [Folder]
     
@@ -26,11 +26,10 @@ struct RelationshipPredicateFolderListExample: View {
         sort: [SortDescriptor(\Folder.creationDate)] )
     var someFavoriteSnippetFolders: [Folder]
     
-    // Not Working 
     @Query(filter: #Predicate<Folder> {
         $0.snippets.allSatisfy {
             $0.isFavorite
-        }
+        } && !$0.snippets.isEmpty
     },
         sort: [SortDescriptor(\Folder.creationDate)] )
     var allFavoriteSnippetFolders: [Folder]
@@ -44,9 +43,8 @@ struct RelationshipPredicateFolderListExample: View {
                         .badge(folder.snippets.count)
                     
                     ForEach(folder.snippets) {
-                        SnippetRow(snippet: $0)
-                            .padding(.leading)
-                            .border(Color.gray)
+                        TestSnippetRow(snippet: $0)
+                            .padding(.leading, 30)
                     }
                 }
             }
@@ -74,7 +72,28 @@ struct RelationshipPredicateFolderListExample: View {
     }
 }
 
+private struct TestSnippetRow: View {
+    let snippet: Snippet
+    
+    var body: some View {
+        HStack {
+            Image(systemName: "note")
+            Text(snippet.title)
+            
+            Spacer()
+            
+            if snippet.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
+        }
+    }
+}
+
+
 #Preview {
     RelationshipPredicateFolderListExample()
         .modelContainer(previewContainer)
 }
+
+
